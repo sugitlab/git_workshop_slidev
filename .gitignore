@@ -1,14 +1,7 @@
-n.DS_Store
-*.local
-dist
-dist-ssr
 node_modules
-# intellij stuff
-.idea/
-*.pdf
-*-export
-demo/starter/slides.md
-assets/demo
-packages/slidev/README.md
-composable-vue-cn
+.DS_Store
+dist
+*.local
+index.html
+.remote-assets
 components.d.ts
