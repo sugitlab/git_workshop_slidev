@@ -10,5 +10,8 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "git_workshop"
+  "name": "git_workshop",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
