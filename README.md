@@ -1,11 +1,11 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# This slide is designed by [Slidev](https://github.com/slidevjs/slidev)!
 
-To start the slide show:
+To start the slide show locally,
 
 - `npm install`
 - `npm run dev`
 - visit http://localhost:3030
 
-Edit the [slides.md](./slides.md) to see the changes.
+To start the slide on the web,
 
-Learn more about Slidev on [documentations](https://sli.dev/).
+- visit https://sugitlab.github.io/git_workshop_slidev
