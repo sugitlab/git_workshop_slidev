@@ -111,7 +111,7 @@ h2, h3, body {
 </style>
 
 ---
-layout: intro
+layout: statement
 ---
 # ① VCSって何?
 
@@ -317,7 +317,7 @@ GitHubの登場によって、 **オープンソース** 活動が世の中に�
 Git だけの力では「Git 良さそうだけど Subversion で別にいいわ」となっていたことでしょう。
 
 ---
-layout: intro
+layout: statement
 ---
 # ② .git の中身を見てみよう
 
@@ -334,8 +334,9 @@ h1 {
 あとで書く
 
 ---
-layout: intro
+layout: statement
 ---
+
 # ③ ちょっと踏み込んだ git
 
 <style>
@@ -345,8 +346,9 @@ h1 {
 </style>
 
 ---
-layout: intro
+layout: statement
 ---
+
 # ④ gitのマージは2種類
 
 <style>
@@ -354,9 +356,11 @@ h1 {
   font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
 }
 </style>
+
 ---
-layout: intro
+layout: statement
 ---
+
 # ⑤ git-flow の Pros/Cons
 
 <style>
@@ -364,9 +368,11 @@ h1 {
   font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
 }
 </style>
+
 ---
-layout: intro
+layout: statement
 ---
+
 # ⑥ gitでやらかさないためにすること
 
 <style>
@@ -374,19 +380,23 @@ h1 {
   font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
 }
 </style>
+
 ---
-layout: intro
+layout: statement
 ---
+
 # ⑦ GitHubのIssueで気をつけること
 
 <style>
 h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif;
 }
 </style>
+
 ---
-layout: intro
+layout: statement
 ---
+
 # ⑧ OSSコントリビューションマナー
 
 <style>
