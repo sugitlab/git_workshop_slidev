@@ -329,9 +329,154 @@ h1 {
 
 ---
 
-# DOING
+# What's .git ?
 
-あとで書く
+<br>
+.git は Git <span style="color:red;">リポジトリの情報をすべて保持している</span> 隠しフォルダです
+
+<br><br>
+そもそも、PC の特定のフォルダが Git リポジトリになっているということを
+
+各種エディタやターミナルはどうやって知るのか？
+
+.git があるかどうかです
+
+```sh {all|5}
+ ~/W/t/gitdir $ la
+total 0
+drwxr-xr-x  3 sugit  staff    96B  7 16 08:03 .
+drwxr-xr-x  4 sugit  staff   128B  7 16 08:03 ..
+drwxr-xr-x  9 sugit  staff   288B  7 16 08:03 .git
+```
+
+---
+layout: fact
+---
+
+# Unpack the .git
+
+<br>
+
+`git init` から見ていきましょう
+
+---
+
+# Unpack the .git
+
+```sh
+~/W/t/g/.git $ tree -L 1
+├── HEAD
+├── config
+├── description
+├── hooks
+├── info
+├── objects
+└── refs
+8 directories, 17 files
+```
+
+できたてほやほやの git リポジトリなので、フォルダはありますが中身はありません。
+
+README.mdをつくってコミットしてみましょう
+
+---
+
+# Unpack the .git
+
+```sh {all|6}
+~/W/t/gitdir $ echo test > README.md
+~/W/t/gitdir $ cat README.md
+test
+~/W/t/gitdir $ git add README.md
+~/W/t/gitdir $ git commit -m "initialize repository with README.md"
+[master (root-commit) e0167f0] initialize repository with README.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
+コミットが積まれました。
+
+.git をみてみましょう。
+
+---
+
+# Unpack the .git
+
+```sh {all|4}
+~/W/t/.git $ tree
+// ~~~省略~~~
+├── logs
+│   ├── HEAD
+│   └── refs
+│       └── heads
+│           └── master
+├── objects
+│   ├── 9d
+│   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
+│   ├── c1
+│   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+│   ├── e0
+│   │   └── 167f03015fa0ea463267610d1b16e82c91a4c9
+│   ├── info
+│   └── pack
+```
+
+なんか増えてますねぇ。
+
+---
+
+# Unpack the .git
+
+```sh {all|1}
+[master (root-commit) e0167f0] initialize repository with README.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
+```sh {all|6-7}
+├── objects
+│   ├── 9d
+│   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
+│   ├── c1
+│   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+│   ├── e0
+│   │   └── 167f03015fa0ea463267610d1b16e82c91a4c9
+│   ├── info
+│   └── pack
+```
+
+<v-click>
+
+おや、一致したIDが見つかりましたね
+
+</v-click>
+
+---
+
+# Unpack the .git
+
+<br>
+実は objects には README.md を圧縮したものが入っています
+
+これがあるから、`git reset` ができるのです。
+
+---
+
+# Unpack the .git
+
+- HEAD
+> 0000000000000000000000000000000000000000 e0167f03015fa0ea463267610d1b16e82c91a4c9 SuGit <sgmt.snj@gmail.com> 1626391666 +0900	commit (initial): initialize repository with README.md
+
+分解すると
+```sh
+0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
+e0167f03015fa0ea463267610d1b16e82c91a4c9 ## <- 自身のコミットハッシュ
+SuGit <sgmt.snj@gmail.com> ## <- コミッター
+1626391666 +0900 ## <- コミット時刻
+commit (initial): initialize repository with ## <- メッセージ
+```
+となっています
+
 
 ---
 layout: statement
