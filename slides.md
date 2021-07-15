@@ -1,323 +1,402 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+theme: bricks # https://github.com/slidevjs/themes/tree/main/packages/theme-bricks
+# background: https://source.unsplash.com/collection/94734566/1920x1080
+class: "text-center"
 highlighter: shiki
-# some information about the slides, markdown enabled
+layout: intro
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Get along with Git
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Presented by [@sugitlab](https://twitter.com/sugitlab).
+  Arranged by [@yuki82511988](https://twitter.com/yuki82511988).
 ---
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+<link href="./override.css" rel="stylesheet">
 
-# Welcome to Slidev
+<!-- This slide uses following fonts.
+font-family: 'Kosugi Maru', 'Sigmar One', 'Signika Negative', sans-serif; -->
 
-Presentation slides for developers
+# Get along with <span style="font-size:96px;">Git</span>
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+  <p @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    Gitとなかよくなろう ...>
+  </p>
+</div>
+
+---
+
+# Who is Sugit?!
+
+<div class="blend" style="display:flex" >
+  <img style="vertical-align:middle" src="https://pbs.twimg.com/profile_images/1261278455842271232/4TQJWEPG_400x400.jpg" height="80" width="80" />
+  <p> <a href="https://twitter.com/sugitlab">@sugitlab</a>: 自称フルペラットエンジニア </p>
+</div>
+
+<br>
+<br>
+
+- 🍵 **Kyoto** - 京都にある会社で研究寄りのエンジニアやってます
+  - 化学 + 数学 + プログラミング がお仕事です
+  - 最近は PdM なお仕事が多くて、あまりコードを書く機会がなく寂しいです🙄
+- 🧑‍💻 **Flutter** - プライベートの時間は（最近は）大体 Flutter やってます
+- 🗞 **[Zenn](https://zenn.dev/sugitlab)** - Flutter のことばかり書いている Zenn アカウントです
+- 🚃 **[TechTrain](https://techbowl.co.jp/techtrain/mentors/116)** - 副業でU30向けのメンターやってます
+
+
+---
+layout: fact
+---
+
+# Thanks
+<div style="
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;">
+  <span style="font-size: 48px; vertical-align:middle;">
+  事前アンケートへのご協力 <br>
+  ありがとうございました
   </span>
 </div>
 
-<a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-  class="abs-br m-6 text-xl icon-btn opacity-50 !border-none !hover:text-white">
-  <carbon-logo-github />
-</a>
+---
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+# Questionnaire Results
+
+- "git-flow という運用パターンとそのPros, Cons" : 11
+- "git のちょっと踏み込んだ使い方" : 10
+- "git でやらかさないためにすること" : 10
+- "そもそも VCS (Version Control System) のことについて知っていますか？" : 10
+- "git が管理している .git フォルダの中身を見たことがありますか？" : 10
+- "git におけるマージは2種類ある" : 9
+- "GitHubのIssueでやってほしくないこと" : 9
+- "OSS コントリビューションマナー" : 7
 
 ---
 
-# What is Slidev?
+# Others
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+- "git やらかしと対処法" : 6
+- "VSC と VCS Hosting Service のことについて知っていますか？" : 6
+- "Git Client (GUI, TUI, CLI tool) のおすすめたち" : 5
+- "ローカルとリモートをちゃんと理解する" : 5
+- "GitHubにおける Markdown 文化とお作法" : 5
+- "git の四方山話 (歴史など)" : 2
+- "git の基本的な使い方" : 1
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+---
+layout: section
+---
 
-<br>
-<br>
+# Outline
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+::right::
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+## 1. VCSって何?
+## 2. .gitの中身
+## 3. ちょっと踏み込んだ git
+## 4. gitのマージは2種類
+## 5. git-flow の Pros/Cons
+## 6. gitでやらかさないためにすること
+## 7. GitHubのIssueで気をつけること
+## 8. OSSコントリビューションマナー
+
+<style>
+h2, h3, body {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+
+---
+layout: intro
+---
+# ① VCSって何?
 
 <style>
 h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
 }
 </style>
 
 ---
 
-# Navigation
+# What's <span style="font-size:48px;">VCS</span> ?
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+## Version Control System
 
-### Keyboard Shortcuts
+電子的なファイルの変更履歴を残しておき、<br>
+過去の状態に戻したり、変更内容を確認できるようにするソフトウェアの総称
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+<br>
+<br>
+<br>
 
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+- ソースコードを管理するためのものではなく<span style="color:red;">電子的な記録全て</span>が対象
+- 音楽・写真・テキスト・書類全て
 
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly!
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+数ある VCS ソフトウェアのうちの１つがみんな大好き <span style="font-size:32px">Git</span> です
 
 ---
 
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes are able to provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+# "VCS" Software
 
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+Git以外にも有名なバージョン管理システムがいくつかあります。
 
-Block
-$$
-\begin{array}{c}
+いまでも選択肢に上がる現役バリバリなものは以下の通りです
 
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+## - Git
+## - Subversion
+## - Mercurial
 
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+---
+layout: fact
+---
 
-\nabla \cdot \vec{\mathbf{B}} & = 0
+# Why Git?
 
-\end{array}
-$$
+<br>
+<span style="font-size:32px">
+いろいろな選択肢があるのに <br><br>
+どうしてみんな Git を使うんだろう??
+</span>
+
+---
+layout: fact
+---
+
+# Git is Champion?
 
 <br>
 
-[Learn more](https://sli.dev/guide/syntax#latex)
+## 🙅 NO 🙅
+
+---
+layout: fact
+---
+
+# Git + GitHub is Champion !!
+
+<br>
+
+## 🙆‍♂️ YES 🙆‍♂️
+### I'm not sure
 
 ---
 
-# Diagrams
+# Git + GitHub is Champion
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+<br>
 
-<div class="grid grid-cols-2 gap-4 pt-4 -mb-6">
+Git が流行る前は Subversion が最強でした
 
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
+昭和からある企業ではまだ Subversion が現役のところもたくさんあります (弊社でも現役です)
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
+そんな Subversion から VCS 王座を奪ったのは
 
+<br>
+
+<span style="font-size:42px">Git ではなく GitHub</span> です（と思っています）
+
+
+---
+
+# History
+
+<br>
+
+もともと Git は Linux 開発者の Linus Tovalds が
+
+「俺の オープンソースプロジェクトを支える VCS が無い！！ （全部気に入らない）」
+
+と言い出してサクサク作ったものです。（二週間で作ったという話です… 🙈）
+
+<v-click>
+
+そう、
+
+<span style="font-size:42px;">オープンソースのために作った</span>
+
+のです。
+
+</v-click>
+
+---
+layout: items
+cols: 2
+---
+
+# Why Git is good for OpenSource ?
+
+::items::
+
+<div>
+  Subversion は 中央集中型 と呼ばれます。<br><br><br>
+  <img src="/resources/centralized.png" width=200 />
+</div>
+<div>
+  一方、Git は 分散型 と呼ばれます。<br><br><br>
+  <img src="/resources/distributed.png" width=200 />
 </div>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
-
----
-layout: center
-class: text-center
 ---
 
-# Learn More
+# Subversion
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+<br>
+
+- リポジトリはサーバー側にのみ作ります
+- クライアント側（実装者）は特定の<span style="color:red;">歴史の１ページのみ</span>を引き出します
+- 変更の記録・履歴の閲覧など全ての操作はサーバーへの接続が必須です
+- バカでかい歴史やバカでかい単一ファイルを扱うのは Subversion が得意です
+  - Gitで動画を扱ったらすぐに死にます🧟‍♂️
+- Subversionの歴史は絶対です
+
+<div style="
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:42px;
+">
+  <img src="/resources/centralized.png" width=200 />
+</div>
+
+---
+
+# Git
+
+<br>
+
+- サーバー・クライアント関係なく、<span style="color:red;">すべての環境がリポジトリを持ちます</span>
+- 変更の記録・履歴の閲覧など全ての操作はオフラインでもOKです
+- 変更の共有（歴史の共有）をリポジトリの同期によって実現します
+- 軽いファイルを扱うことを基本とします（GitHubはデフォルトで Max 50MB です）
+- Gitの歴史は簡単に書き換えることができます（権限があれば）
+
+<div style="
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:42px;
+">
+  <img src="/resources/distributed.png" width=200 />
+</div>
+
+---
+
+# Git v.s. Subversion
+
+<br>
+単純な特長だけを比較しても、甲乙つけがたい…。
+
+<br>
+<br>
+
+でも、オープンソースなら？
+
+みんなで作るのに、１箇所のサーバーに集中アクセスするの？
+
+<span style="color:red;">
+サーバー死んじゃう！！
+</span>
+
+---
+
+# GitHub makes Git Champion
+
+<br>
+
+GitHubの登場によって、 **オープンソース** 活動が世の中に急速に拡大しました。
+
+その結果、 「Git 最強じゃね？」 となったのです。
+
+Git だけの力では「Git 良さそうだけど Subversion で別にいいわ」となっていたことでしょう。
+
+---
+layout: intro
+---
+# ② .git の中身を見てみよう
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+
+---
+
+# DOING
+
+あとで書く
+
+---
+layout: intro
+---
+# ③ ちょっと踏み込んだ git
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+
+---
+layout: intro
+---
+# ④ gitのマージは2種類
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+---
+layout: intro
+---
+# ⑤ git-flow の Pros/Cons
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+---
+layout: intro
+---
+# ⑥ gitでやらかさないためにすること
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+---
+layout: intro
+---
+# ⑦ GitHubのIssueで気をつけること
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+---
+layout: intro
+---
+# ⑧ OSSコントリビューションマナー
+
+<style>
+h1 {
+  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+}
+</style>
+
+---
+layout: statement
+---
+
+# THANKS
