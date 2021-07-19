@@ -417,78 +417,115 @@ layout: center-image
 layout: center-image
 ---
 
-<div class="text-3xl">
-適当なフォルダで
-</div>
-
-```shell
-$ git log
-```
-
-<div class="text-3xl">
-とたたくと
+<div class="text-2xl">
+  適当なフォルダで git log とたたくと
 </div>
 
 ```shell
 fatal: not a git repository (or any of the parent directories): .git
 ```
+<div class="text-2xl">
+  と怒られます
+</div>
 
-と怒られます
+---
+layout: center-image
+---
+<div class="text-5xl">
+  not a git repository 
+</div>
+
+---
+layout: center-image
+---
+<div class="text-4xl">
+  gitリポジトリって何か分かりますか?
+</div>
+
+
+---
+layout: center-image
+---
+<div class="text-4xl">
+  git commit って何か分かりますか?
+</div>
+
+---
+layout: center-image
+---
+<div class="text-4xl">
+  分からなくなってきませんか? 😵‍💫
+</div>
+
+---
+layout: center-image
+---
+<div class="text-4xl">
+  実際 分からなくてもコードはかけます 🤫
+</div>
+
+
+---
+layout: center-image
+---
+<div class="text-4xl mb-8">
+  Gitの仕組みがわかると...🤔
+</div>
+
+<v-click>
+  <div class="text-4xl">
+    Gitの操作に自信が出る 😎
+  </div>
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-4xl font-bold text-primary mb-8">
+.git の中身を見てみよう
+</div>
+
+.git ?? 🤔
+
+---
+layout: center-image
+image: '/assets/gitdir.png'
+---
+
+<div class="text-3xl font-bold mb-8">
+Gitリポジトリであるかどうか...
+</div>
+<div class="text-3xl font-bold mb-8">
+それは .git があるかどうかです!
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl">
+.git は Git リポジトリの情報をすべて保持している隠しフォルダです
+</div>
 
 ---
 layout: image-right
 ---
 
-# ② .git の中身を見てみよう
-
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
-
----
-layout: image-right
----
-
-# What's .git ?
-
-<br>
-.git は Git <span style="color:red;">リポジトリの情報をすべて保持している</span> 隠しフォルダです
-
-<br><br>
-そもそも、PC の特定のフォルダが Git リポジトリになっているということを
-
-各種エディタやターミナルはどうやって知るのか？
-
-.git があるかどうかです
-
-```shell {all|5}
- ~/W/t/gitdir $ la
-total 0
-drwxr-xr-x  3 sugit  staff    96B  7 16 08:03 .
-drwxr-xr-x  4 sugit  staff   128B  7 16 08:03 ..
-drwxr-xr-x  9 sugit  staff   288B  7 16 08:03 .git
-```
-
----
-layout: image-right
----
-
-# Unpack the .git
+<div class="text-5xl text-primary font-bold mb-8">
+  Unpack the .git
+</div>
 
 <br>
 
 `git init` から見ていきましょう
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# Unpack the .git
-
 ```shell
-~/W/t/g/.git $ tree -L 1
+~/.git $ tree -L 1
 ├── HEAD
 ├── config
 ├── description
@@ -498,41 +535,38 @@ layout: image-right
 └── refs
 8 directories, 17 files
 ```
+<div class="text-xl">
+git init で作った git リポジトリです
 
-できたてほやほやの git リポジトリなので、フォルダはありますが中身はありません。
+さっそく README.md をつくってコミットしてみましょう
+</div>
 
-README.md をつくってコミットしてみましょう
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# Unpack the .git
-
-```shell {all|6}
-~/W/t/gitdir $ echo test > README.md
-~/W/t/gitdir $ cat README.md
-test
-~/W/t/gitdir $ git add README.md
-~/W/t/gitdir $ git commit -m "initialize repository with README.md"
-[master (root-commit) e0167f0] initialize repository with README.md
+```shell {all|4}
+~/gitdir $ echo test > README.md  <-- README.mdを作って
+~/gitdir $ git add README.md  <-- ステージングにして
+~/gitdir $ git commit -m "initialize repository"  <-- コミット
+[master (root-commit) d041e09] initialize repository
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
 
-コミットが積まれました。
-
-.git をみてみましょう。
+<v-click>
+  <div class="text-xl">
+  最初のコミットができました
+  </div>
+</v-click>
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-
-# Unpack the .git
-
-```shell {all|4}
-~/W/t/.git $ tree
+```shell {all}
+~/.git $ tree
 // ~~~省略~~~
 ├── logs
 │   ├── HEAD
@@ -544,23 +578,26 @@ layout: image-right
 │   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
 │   ├── c1
 │   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
-│   ├── e0
-│   │   └── 167f03015fa0ea463267610d1b16e82c91a4c9
+│   ├── d0
+│   │   └── 41e090b548f4ab7c11848384f9e171e728fc3d
 │   ├── info
 │   └── pack
+└── refs
+    ├── heads
+    │   └── master
+    └── tags
 ```
 
-なんか増えてますねぇ。
+<div class="text-xl">
+  なんかいろいろ増えました
+</div>
 
 ---
 layout: image-right
 ---
 
-
-# Unpack the .git
-
 ```shell {all|1}
-[master (root-commit) e0167f0] initialize repository with README.md
+[master (root-commit) d041e09] initialize repository
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
@@ -571,129 +608,582 @@ layout: image-right
 │   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
 │   ├── c1
 │   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
-│   ├── e0
-│   │   └── 167f03015fa0ea463267610d1b16e82c91a4c9
+│   ├── d0
+│   │   └── 41e090b548f4ab7c11848384f9e171e728fc3d
 │   ├── info
 │   └── pack
 ```
 
 <v-click>
+  <div class="text-xl">
+    おや、一致した ID が見つかりましたね
+  </div>
+</v-click>
 
-おや、一致した ID が見つかりましたね
+---
+layout: center-image
+---
+
+```shell
+├── d0
+    └── 41e090b548f4ab7c11848384f9e171e728fc3d
+```
+
+<div class="text-2xl">
+  解析してみましょう
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-xl mb-4">
+  git cat-file で解析できます
+</div>
+
+```shell {all|2}
+$ git cat-file -p d041 <-- 最初4文字くらいでOK
+tree c12d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+author SuGit <sgmt.snj@gmail.com> 1626708424 +0900
+committer SuGit <sgmt.snj@gmail.com> 1626708424 +0900
+```
+
+<v-click>
+
+```shell {4-5}
+├── objects
+│   ├── 9d
+│   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
+│   ├── c1
+│   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+│   ├── d0
+│   │   └── 41e090b548f4ab7c11848384f9e171e728fc3d
+│   ├── info
+│   └── pack
+```
+
+おや??
 
 </v-click>
 
 ---
-layout: image-right
+layout: center-image
+---
+
+```shell {all|2}
+$ git cat-file -p c12d
+100644 blob 9daeafb9864cf43055ae93beb0afd6c7d144bfa4    README.md
+```
+
+<v-click>
+
+```shell {2-3}
+├── objects
+│   ├── 9d
+│   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
+│   ├── c1
+│   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+│   ├── d0
+│   │   └── 41e090b548f4ab7c11848384f9e171e728fc3d
+│   ├── info
+│   └── pack
+```
+
+ほう...
+
+</v-click>
+
+---
+layout: center-image
+---
+
+```shell
+$ git cat-file -p 9dae
+test
+```
+
+<div class="text-xl">
+  なんか見えてきましたね
+</div>
+
+---
+layout: center-image
+---
+
+```shell
+├── 9d
+│   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
+├── c1
+│   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+├── d0
+│   └── 41e090b548f4ab7c11848384f9e171e728fc3d
+```
+これがこう
+```shell
+$ git cat-file -p 9dae
+test
+$ git cat-file -p c12d
+100644 blob 9daeafb9864cf43055ae93beb0afd6c7d144bfa4    README.md
+$ git cat-file -p d041
+tree c12d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+author SuGit <sgmt.snj@gmail.com> 1626708424 +0900
+committer SuGit <sgmt.snj@gmail.com> 1626708424 +0900
+```
+順番に見ていきましょう
+
+---
+layout: center-image
 ---
 
 
-# Unpack the .git
+<div class="text-3xl font-bold text-primary mb-4">
+  type: commit
+</div>
 
-<br>
-実は objects には README.md を圧縮したものが入っています
-
-これがあるから、`git reset` ができるのです。
+<div class="text-xl rounded-2xl border-4 border-green-200 p-4 m-8 text-left">
+  <div class="text-xl font-bold">$ git cat-file -p d041</div>
+  tree <span class="text-red-500">c12d</span>7c0ed49ad9c7aa938743ba6fdee54b6b7fe1<br>
+  <div class="text-sm">// c12d のツリーにコミットをつんだよ</div>
+  <span class="text-green-500">author</span> SuGit &lt;sgmt.snj@gmail.com&gt; 1626708424 +0900<br>
+   <div class="text-sm">// コミットの著者は SuGit だよ</div>
+   <div class="text-sm">// 時刻は 1626708424 +0900 = 2021/7/20 00:27:04 だよ (UNIX時間)</div>
+  <span class="text-green-500">committer</span> SuGit &lt;sgmt.snj@gmail.com&gt; 1626708424 +0900
+   <div class="text-sm">// コミッターは... 以下同文</div>
+</div>
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# Unpack the .git
 
-- HEAD
-  > 0000000000000000000000000000000000000000 e0167f03015fa0ea463267610d1b16e82c91a4c9 SuGit <sgmt.snj@gmail.com> 1626391666 +0900 commit (initial): initialize repository with README.md
+<div class="text-3xl font-bold text-primary mb-4">
+  type: tree
+</div>
 
+<div class="text-xl rounded-2xl border-4 border-green-200 p-4 m-8 text-left">
+  <div class="text-xl font-bold">$ git cat-file -p c12d</div>
+  100644 blob <span class="text-red-500">9dae</span>afb9864cf43055ae93beb0afd6c7d144bfa4    README.md
+  <div class="text-sm">// README.md を圧縮して 9dae に保存したよ</div>
+</div>
+
+---
+layout: center-image
+---
+
+
+<div class="text-3xl font-bold text-primary mb-4">
+  type: blob
+</div>
+
+<div class="text-xl rounded-2xl border-4 border-green-200 p-4 m-8 text-left">
+  <div class="text-xl font-bold">$ git cat-file -p 9dae</div>
+  <span class="text-red-500">test</span>
+  <div class="text-sm">// README.md の中身だよ</div>
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold text-primary mb-4">
+  つまり
+</div>
+
+- commit: コミットの情報
+- tree: コミット履歴の情報
+- blob: ファイルのバックアップ
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
+
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold mb-4">
+  次はログをみましょう
+</div>
+
+```shell {4-7}
+~/.git $ tree
+// ~~~省略~~~
+├── logs
+│   ├── HEAD
+│   └── refs
+│       └── heads
+│           └── master
+├── objects
+│   ├── 9d
+│   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
+│   ├── c1
+│   │   └── 2d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
+│   ├── d0
+│   │   └── 41e090b548f4ab7c11848384f9e171e728fc3d
+│   ├── info
+│   └── pack
+└── refs
+    ├── heads
+    │   └── master
+    └── tags
+```
+
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold mb-4">
+log を見たいので、コミットをもう一度追加しておきましょう
+</div>
+
+README.md
+
+```md
+- test
++ # Abs.
++  This repository is just for testing the git behaviour
+```
+
+<v-click>
+
+```shell
+~/gitdir $ git add README.md
+~/gitdir $ git commit -m "update README.md"
+[master dd96c8f] update README.md
+1 file changed, 3 insertions(+), 1 deletion(-)
+```
+
+</v-click>
+
+---
+layout: center-image
+---
+
+```shell {all|2-6}
+~/gitdir$ git log
+commit dd96c8f8bbcff86922b3db1f94aa38c4c6f3d633 (HEAD -> master)
+Author: Sugit <sgmt.snj@gmail.com>
+Date:   Tue Jul 20 01:09:32 2021 +0900
+
+    update README.md
+
+commit d041e090b548f4ab7c11848384f9e171e728fc3d
+Author: SuGit <sgmt.snj@gmail.com>
+Date:   Tue Jul 20 00:27:04 2021 +0900
+
+    initialize repository
+```
+
+<div class="text-xl font-bold mb-4">
+新しいコミットが増えました
+</div>
+ 
+---
+layout: center-image
+---
+
+```shell
+~/.git/logs $ tree
+├── HEAD
+└── refs
+    └── heads
+        └── master
+
+~/.git/logs $ cat HEAD
+0000000000000000000000000000000000000000
+d041e090b548f4ab7c11848384f9e171e728fc3d
+SuGit <sgmt.snj@gmail.com> 1626708424 +0900
+commit (initial): initialize repository
+
+d041e090b548f4ab7c11848384f9e171e728fc3d
+dd96c8f8bbcff86922b3db1f94aa38c4c6f3d633
+Sugit <sgmt.snj@gmail.com> 1626710972 +0900
+commit: update README.md
+```
+
+<div class="text-xl font-bold mb-4">
+これがログです
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold mb-4">
 分解すると
+</div>
 
 ```shell
 0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
-e0167f03015fa0ea463267610d1b16e82c91a4c9 ## <- 自身のコミットハッシュ
-SuGit <sgmt.snj@gmail.com> ## <- コミッター
-1626391666 +0900 ## <- コミット時刻
+d041e090b548f4ab7c11848384f9e171e728fc3d ## <- 自身のコミットハッシュ
+SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
 commit (initial): initialize repository with ## <- メッセージ
 ```
 
 となっています
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-
-# ③ ちょっと踏み込んだ git
-
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
+<div class="text-5xl text-primary font-bold mb-4">
+1つ前のコミットハッシュ
+</div>
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# ④ git のマージは 2 種類
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02
+```
 
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
+```shell
+0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
+d041e090b548f4ab7c11848384f9e171e728fc3d ## <- 自身のコミットハッシュ
+SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
+commit (initial): initialize repository  ## <- メッセージ
+```
 
----
-layout: image-right
----
+```mermaid
+graph LR
+  c02((d041))
+  c03((dd96))
+  style c02 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c02 --> c03
+```
 
-
-# ⑤ git-flow の Pros/Cons
-
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
-
----
-layout: image-right
----
-
-# ⑥ git でやらかさないためにすること
-
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
+```shell
+d041e090b548f4ab7c11848384f9e171e728fc3d
+dd96c8f8bbcff86922b3db1f94aa38c4c6f3d633
+Sugit <sgmt.snj@gmail.com> 1626710972 +0900
+commit: update README.md
+```
 
 ---
-layout: image-right
+layout: center-image
 ---
 
+<div class="text-2xl font-bold mb-8">
+  コミットは「自身のハッシュ値」と「ひとつ前のハッシュ値」を持ちます
+</div>
 
-# ⑦ GitHub の Issue で気をつけること
+<div class="text-2xl font-bold mb-4">
+git graph はこの連結によって作られます
+</div>
 
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif;
-}
-</style>
-
----
-layout: image-right
----
-
-
-# ⑧ OSS コントリビューションマナー
-
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((........))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03
+  c03 --> c04
+```
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# THANKS
+<div class="text-3xl font-bold mb-4">
+これを踏まえて、いろいろなコマンドをみていきましょう
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+git branch test
+</div>
+
+<div class="text-xl">
+test ブランチの作成<br>
+実態は・・・
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+コミットハッシュに名前をつけて保存しただけ
+</div>
+
+<div class="text-xl rounded-2xl border-4 border-green-200 p-4 m-8 text-left">
+~/.git/refs/heads $ cat test <br>
+dd96c8f8bbcff86922b3db1f94aa38c4c6f3d633
+</div>
+
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((........))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03
+  c03 --> c04
+```
+
+<arrow x1="480" y1="430" x2="450" y2="390" color="#99f" width="2" arrowSize="1" />
+test
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+git commit --amend -m "hogehoge"
+</div>
+
+<div class="text-xl">
+コミットの修正は単に log を書き換えているだけ
+</div>
+
+```shell
+0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
+d041e090b548f4ab7c11848384f9e171e728fc3d ## <- 自身のコミットハッシュ
+SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
+commit (initial): initialize repository ## <- メッセージ　<-- ここを書き換える
+```
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+git merge test
+</div>
+
+test ブランチのマージは...?
+
+---
+layout: center-image
+---
+
+<div class="text-lg m-8">
+それぞれが独自に進化している場合
+</div>
+
+master
+<arrow x1="520" y1="220" x2="630" y2="260" color="#f99" width="2" arrowSize="1" />
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((9437))
+  c05((a79b))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c04
+  c03 --> c05
+```
+test
+<arrow x1="520" y1="420" x2="630" y2="380" color="#99f" width="2" arrowSize="1" />
+
+---
+layout: center-image
+---
+
+<div class="text-lg m-8">
+マージコミットが増えて... master の位置が変わります
+</div>
+
+master
+<arrow x1="520" y1="220" x2="700" y2="300" color="#f99" width="2" arrowSize="1" />
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((9437))
+  c05((a79b))
+  c06((88a0))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c04
+  c03 --> c05
+  c04 --> c06
+  c05 --> c06
+```
+test
+<arrow x1="520" y1="420" x2="580" y2="390" color="#99f" width="2" arrowSize="1" />
+
+---
+layout: center-image
+---
+
+<div class="text-lg m-8">
+testだけが進化している場合
+</div>
+
+master
+<arrow x1="500" y1="240" x2="540" y2="280" color="#f99" width="2" arrowSize="1" />
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04{{....}}
+  c05((a79b))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style c04 fill:#fff,stroke:#333,stroke-width:0px
+  c01 --> c02 --> c03 --> c04
+  c03 --> c05
+```
+test
+<arrow x1="520" y1="420" x2="630" y2="380" color="#99f" width="2" arrowSize="1" />
+
+---
+layout: center-image
+---
+
+<div class="text-lg m-8">
+git merge しても masterの位置が変わるだけです
+</div>
+
+master
+<arrow x1="520" y1="270" x2="600" y2="300" color="#f99" width="2" arrowSize="1" />
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c05((a79b))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c05
+```
+test
+<arrow x1="510" y1="370" x2="600" y2="350" color="#99f" width="2" arrowSize="1" />
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold m-8">
+Git のマージが 2 種類ありますね
+</div>
+
+アンケートの内容をやっと回収 🤫
+
+
+---
+layout: center-image
+---
+
+hogehoge
+
