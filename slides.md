@@ -1186,16 +1186,3 @@ layout: center-image
 ---
 
 hogehoge
-
-
----
-
-
-dummy
-
-![](/assets/centralized.png)
-![](/assets/distributed.png)
-![](/assets/git-svn.png)
-![](/assets/git01.png)
-![](/assets/gitdir.png)
-![](/assets/svn01.png)
