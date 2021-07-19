@@ -1,34 +1,30 @@
 ---
-theme: bricks # https://github.com/slidevjs/themes/tree/main/packages/theme-bricks
-# background: https://source.unsplash.com/collection/94734566/1920x1080
-class: "text-center"
-highlighter: shiki
+theme: light-icons # https://github.com/lightvue/slidev-theme-light-icons
+image: "https://source.unsplash.com/collection/94734566/1920x1080"
 layout: intro
 info: |
   ## Get along with Git
 
-  Presented by [@sugitlab](https://twitter.com/sugitlab).
+  Presented by [@sugitlab](https://twitter.com/sugitlab). <br>
   Arranged by [@yuki82511988](https://twitter.com/yuki82511988).
 ---
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-<link href="./override.css" rel="stylesheet">
 
-<!-- This slide uses following fonts.
-font-family: 'Kosugi Maru', 'Sigmar One', 'Signika Negative', sans-serif; -->
-
-# Get along with <span style="font-size:96px;">Git</span>
-
-<div class="pt-12">
-  <p @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Gitとなかよくなろう ...>
-  </p>
+<div class="mb-4 absolute bottom-4 left-12">
+  <span class="text-6xl text-primary-lighter text-opacity-80" style="font-weight:500;" >
+    Get Along With
+  </span>
+  <div class="text-9xl text-white text-opacity-60" style="font-weight:600;" >
+    Git  <light-icon icon="git-branch"/>
+  </div> 
 </div>
 
 ---
+layout: image-right
+equal: false
+---
 
-# Who is Sugit?!
+<div class="text-5xl font-bold text-primary pb-4">Who is Sugit?!</div>
+
 
 <div class="blend" style="display:flex" >
   <img style="vertical-align:middle" src="https://pbs.twimg.com/profile_images/1261278455842271232/4TQJWEPG_400x400.jpg" height="80" width="80" />
@@ -40,42 +36,66 @@ font-family: 'Kosugi Maru', 'Sigmar One', 'Signika Negative', sans-serif; -->
 
 - 🍵 **Kyoto** - 京都にある会社で研究寄りのエンジニアやってます
   - 化学 + 数学 + プログラミング がお仕事です
-  - 最近は PdM なお仕事が多くて、あまりコードを書く機会がなく寂しいです🙄
-- 🧑‍💻 **Flutter** - プライベートの時間は（最近は）大体 Flutter やってます
+  - 最近は PdM なお仕事が多め (´・ω・｀)
+- 🧑‍💻 **Flutter** - プライベートの時間は大体 Flutter やってます
 - 🗞 **[Zenn](https://zenn.dev/sugitlab)** - Flutter のことばかり書いている Zenn アカウントです
-- 🚃 **[TechTrain](https://techbowl.co.jp/techtrain/mentors/116)** - 副業でU30向けのメンターやってます
+- 🚃 **[TechTrain](https://techbowl.co.jp/techtrain/mentors/116)** - 副業で U30 向けのメンターやってます。
+  - U30なら無料なので興味あればぜひ
 
+<style>
+.blend {
+  display: grid;
+  place-items: center;
+}
+
+.blend img {
+  mix-blend-mode: multiply;
+  max-width: 300px;
+  height: auto;
+}
+
+ul {
+  list-style-type: circle;
+}
+</style>
 
 ---
-layout: fact
+layout: image-right
 ---
 
-# Thanks
-<div style="
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 48px;">
-  <span style="font-size: 48px; vertical-align:middle;">
-  事前アンケートへのご協力 <br>
-  ありがとうございました
-  </span>
+<div class="text-5xl font-bold text-primary pb-4">Thanks</div>
+
+<div class="text-2xl">
+  事前アンケートへのご協力ありがとうございました
 </div>
 
 ---
+layout: center-image
+---
 
-# Questionnaire Results
+<div class="text-5xl font-bold text-primary pb-4">Questionnaire Results</div>
 
-- "git-flow という運用パターンとそのPros, Cons" : 11
+- "git-flow という運用パターンとその Pros, Cons" : 11
 - "git のちょっと踏み込んだ使い方" : 10
 - "git でやらかさないためにすること" : 10
 - "そもそも VCS (Version Control System) のことについて知っていますか？" : 10
 - "git が管理している .git フォルダの中身を見たことがありますか？" : 10
-- "git におけるマージは2種類ある" : 9
-- "GitHubのIssueでやってほしくないこと" : 9
+- "git におけるマージは 2 種類ある" : 9
+- "GitHub の Issue でやってほしくないこと" : 9
 - "OSS コントリビューションマナー" : 7
 
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
 ---
+layout: image-right
+---
+
 
 # Others
 
@@ -83,26 +103,32 @@ layout: fact
 - "VSC と VCS Hosting Service のことについて知っていますか？" : 6
 - "Git Client (GUI, TUI, CLI tool) のおすすめたち" : 5
 - "ローカルとリモートをちゃんと理解する" : 5
-- "GitHubにおける Markdown 文化とお作法" : 5
+- "GitHub における Markdown 文化とお作法" : 5
 - "git の四方山話 (歴史など)" : 2
 - "git の基本的な使い方" : 1
 
 ---
-layout: section
+layout: image-right
 ---
+
 
 # Outline
 
-::right::
+## 1. VCS って何?
 
-## 1. VCSって何?
-## 2. .gitの中身
+## 2. .git の中身
+
 ## 3. ちょっと踏み込んだ git
-## 4. gitのマージは2種類
+
+## 4. git のマージは 2 種類
+
 ## 5. git-flow の Pros/Cons
-## 6. gitでやらかさないためにすること
-## 7. GitHubのIssueで気をつけること
-## 8. OSSコントリビューションマナー
+
+## 6. git でやらかさないためにすること
+
+## 7. GitHub の Issue で気をつけること
+
+## 8. OSS コントリビューションマナー
 
 <style>
 h2, h3, body {
@@ -111,9 +137,10 @@ h2, h3, body {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
-# ① VCSって何?
+
+# ① VCS って何?
 
 <style>
 h1 {
@@ -140,22 +167,28 @@ h1 {
 数ある VCS ソフトウェアのうちの１つがみんな大好き <span style="font-size:32px">Git</span> です
 
 ---
+layout: image-right
+---
+
 
 # "VCS" Software
 
 <br>
 
-Git以外にも有名なバージョン管理システムがいくつかあります。
+Git 以外にも有名なバージョン管理システムがいくつかあります。
 
 いまでも選択肢に上がる現役バリバリなものは以下の通りです
 
 ## - Git
+
 ## - Subversion
+
 ## - Mercurial
 
 ---
-layout: fact
+layout: image-right
 ---
+
 
 # Why Git?
 
@@ -166,7 +199,7 @@ layout: fact
 </span>
 
 ---
-layout: fact
+layout: image-right
 ---
 
 # Git is Champion?
@@ -176,17 +209,22 @@ layout: fact
 ## 🙅 NO 🙅
 
 ---
-layout: fact
+layout: image-right
 ---
+
 
 # Git + GitHub is Champion !!
 
 <br>
 
 ## 🙆‍♂️ YES 🙆‍♂️
+
 ### I'm not sure
 
 ---
+layout: image-right
+---
+
 
 # Git + GitHub is Champion
 
@@ -202,8 +240,10 @@ Git が流行る前は Subversion が最強でした
 
 <span style="font-size:42px">Git ではなく GitHub</span> です（と思っています）
 
-
 ---
+layout: image-right
+---
+
 
 # History
 
@@ -226,24 +266,24 @@ Git が流行る前は Subversion が最強でした
 </v-click>
 
 ---
-layout: items
-cols: 2
+layout: image-right
 ---
 
 # Why Git is good for OpenSource ?
 
-::items::
-
 <div>
   Subversion は 中央集中型 と呼ばれます。<br><br><br>
-  <img src="/resources/centralized.png" width=200 />
+  <img src="/assets/centralized.png" width=200 />
 </div>
 <div>
   一方、Git は 分散型 と呼ばれます。<br><br><br>
-  <img src="/resources/distributed.png" width=200 />
+  <img src="/assets/distributed.png" width=200 />
 </div>
 
 ---
+layout: image-right
+---
+
 
 # Subversion
 
@@ -253,8 +293,8 @@ cols: 2
 - クライアント側（実装者）は特定の<span style="color:red;">歴史の１ページのみ</span>を引き出します
 - 変更の記録・履歴の閲覧など全ての操作はサーバーへの接続が必須です
 - バカでかい歴史やバカでかい単一ファイルを扱うのは Subversion が得意です
-  - Gitで動画を扱ったらすぐに死にます🧟‍♂️
-- Subversionの歴史は絶対です
+  - Git で動画を扱ったらすぐに死にます 🧟‍♂️
+- Subversion の歴史は絶対です
 
 <div style="
   display: flex;
@@ -262,9 +302,11 @@ cols: 2
   align-items: center;
   margin-top:42px;
 ">
-  <img src="/resources/centralized.png" width=200 />
+  <img src="/assets/centralized.png" width=200 />
 </div>
 
+---
+layout: image-right
 ---
 
 # Git
@@ -272,10 +314,10 @@ cols: 2
 <br>
 
 - サーバー・クライアント関係なく、<span style="color:red;">すべての環境がリポジトリを持ちます</span>
-- 変更の記録・履歴の閲覧など全ての操作はオフラインでもOKです
+- 変更の記録・履歴の閲覧など全ての操作はオフラインでも OK です
 - 変更の共有（歴史の共有）をリポジトリの同期によって実現します
-- 軽いファイルを扱うことを基本とします（GitHubはデフォルトで Max 50MB です）
-- Gitの歴史は簡単に書き換えることができます（権限があれば）
+- 軽いファイルを扱うことを基本とします（GitHub はデフォルトで Max 50MB です）
+- Git の歴史は簡単に書き換えることができます（権限があれば）
 
 <div style="
   display: flex;
@@ -283,9 +325,11 @@ cols: 2
   align-items: center;
   margin-top:42px;
 ">
-  <img src="/resources/distributed.png" width=200 />
+  <img src="/assets/distributed.png" width=200 />
 </div>
 
+---
+layout: image-right
 ---
 
 # Git v.s. Subversion
@@ -305,20 +349,23 @@ cols: 2
 </span>
 
 ---
+layout: image-right
+---
 
 # GitHub makes Git Champion
 
 <br>
 
-GitHubの登場によって、 **オープンソース** 活動が世の中に急速に拡大しました。
+GitHub の登場によって、 **オープンソース** 活動が世の中に急速に拡大しました。
 
 その結果、 「Git 最強じゃね？」 となったのです。
 
 Git だけの力では「Git 良さそうだけど Subversion で別にいいわ」となっていたことでしょう。
 
 ---
-layout: statement
+layout: image-right
 ---
+
 # ② .git の中身を見てみよう
 
 <style>
@@ -327,6 +374,8 @@ h1 {
 }
 </style>
 
+---
+layout: image-right
 ---
 
 # What's .git ?
@@ -341,7 +390,7 @@ h1 {
 
 .git があるかどうかです
 
-```sh {all|5}
+```shell {all|5}
  ~/W/t/gitdir $ la
 total 0
 drwxr-xr-x  3 sugit  staff    96B  7 16 08:03 .
@@ -350,7 +399,7 @@ drwxr-xr-x  9 sugit  staff   288B  7 16 08:03 .git
 ```
 
 ---
-layout: fact
+layout: image-right
 ---
 
 # Unpack the .git
@@ -360,10 +409,12 @@ layout: fact
 `git init` から見ていきましょう
 
 ---
+layout: image-right
+---
 
 # Unpack the .git
 
-```sh
+```shell
 ~/W/t/g/.git $ tree -L 1
 ├── HEAD
 ├── config
@@ -377,13 +428,15 @@ layout: fact
 
 できたてほやほやの git リポジトリなので、フォルダはありますが中身はありません。
 
-README.mdをつくってコミットしてみましょう
+README.md をつくってコミットしてみましょう
 
+---
+layout: image-right
 ---
 
 # Unpack the .git
 
-```sh {all|6}
+```shell {all|6}
 ~/W/t/gitdir $ echo test > README.md
 ~/W/t/gitdir $ cat README.md
 test
@@ -399,10 +452,13 @@ test
 .git をみてみましょう。
 
 ---
+layout: image-right
+---
+
 
 # Unpack the .git
 
-```sh {all|4}
+```shell {all|4}
 ~/W/t/.git $ tree
 // ~~~省略~~~
 ├── logs
@@ -424,16 +480,19 @@ test
 なんか増えてますねぇ。
 
 ---
+layout: image-right
+---
+
 
 # Unpack the .git
 
-```sh {all|1}
+```shell {all|1}
 [master (root-commit) e0167f0] initialize repository with README.md
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
 
-```sh {all|6-7}
+```shell {all|6-7}
 ├── objects
 │   ├── 9d
 │   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
@@ -447,11 +506,14 @@ test
 
 <v-click>
 
-おや、一致したIDが見つかりましたね
+おや、一致した ID が見つかりましたね
 
 </v-click>
 
 ---
+layout: image-right
+---
+
 
 # Unpack the .git
 
@@ -461,26 +523,30 @@ test
 これがあるから、`git reset` ができるのです。
 
 ---
+layout: image-right
+---
 
 # Unpack the .git
 
 - HEAD
-> 0000000000000000000000000000000000000000 e0167f03015fa0ea463267610d1b16e82c91a4c9 SuGit <sgmt.snj@gmail.com> 1626391666 +0900	commit (initial): initialize repository with README.md
+  > 0000000000000000000000000000000000000000 e0167f03015fa0ea463267610d1b16e82c91a4c9 SuGit <sgmt.snj@gmail.com> 1626391666 +0900 commit (initial): initialize repository with README.md
 
 分解すると
-```sh
+
+```shell
 0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
 e0167f03015fa0ea463267610d1b16e82c91a4c9 ## <- 自身のコミットハッシュ
 SuGit <sgmt.snj@gmail.com> ## <- コミッター
 1626391666 +0900 ## <- コミット時刻
 commit (initial): initialize repository with ## <- メッセージ
 ```
+
 となっています
 
+---
+layout: image-right
+---
 
----
-layout: statement
----
 
 # ③ ちょっと踏み込んだ git
 
@@ -491,10 +557,10 @@ h1 {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
 
-# ④ gitのマージは2種類
+# ④ git のマージは 2 種類
 
 <style>
 h1 {
@@ -503,8 +569,9 @@ h1 {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
+
 
 # ⑤ git-flow の Pros/Cons
 
@@ -515,10 +582,10 @@ h1 {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
 
-# ⑥ gitでやらかさないためにすること
+# ⑥ git でやらかさないためにすること
 
 <style>
 h1 {
@@ -527,10 +594,11 @@ h1 {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
 
-# ⑦ GitHubのIssueで気をつけること
+
+# ⑦ GitHub の Issue で気をつけること
 
 <style>
 h1 {
@@ -539,10 +607,11 @@ h1 {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
 
-# ⑧ OSSコントリビューションマナー
+
+# ⑧ OSS コントリビューションマナー
 
 <style>
 h1 {
@@ -551,7 +620,7 @@ h1 {
 </style>
 
 ---
-layout: statement
+layout: image-right
 ---
 
 # THANKS

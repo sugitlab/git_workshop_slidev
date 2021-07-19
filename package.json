@@ -10,7 +10,9 @@
     "@slidev/cli": "^0.22.4",
     "@slidev/theme-bricks": "^0.0.2",
     "@slidev/theme-default": "^0.19.1",
-    "slidev-theme-penguin": "^1.1.2"
+    "slidev-theme-light-icons": "^1.0.2",
+    "slidev-theme-penguin": "^1.0.0",
+    "slidev-theme-purplin": "^1.0.0"
   },
   "name": "git_workshop",
   "devDependencies": {
