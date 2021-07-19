@@ -203,7 +203,7 @@ Git / Subversion / Mercurial
 
 ---
 layout: center-image
-image: 'https://gyazo.com/bca93c9f18f08f3da2db9058b405ba71'
+image: 'https://gyazo.com/bca93c9f18f08f3da2db9058b405ba71.png'
 ---
 
 <div class="text-4xl text-primary font-bold m-4">
@@ -267,7 +267,7 @@ layout: center-image
 
 ---
 layout: image-left
-image: 'https://gyazo.com/1057a847ce0b0e71b693d725a61da455'
+image: 'https://gyazo.com/1057a847ce0b0e71b693d725a61da455.png'
 equal: false
 ---
 
@@ -277,7 +277,7 @@ equal: false
 
 ---
 layout: image-right
-image: 'https://gyazo.com/9bd97cf0c60ba885cc02fb132c0083f2'
+image: 'https://gyazo.com/9bd97cf0c60ba885cc02fb132c0083f2.png'
 equal: false
 ---
 
@@ -287,7 +287,7 @@ equal: false
 
 ---
 layout: image-left
-image: 'https://gyazo.com/689031935c80e501b976af1812af629f'
+image: 'https://gyazo.com/689031935c80e501b976af1812af629f.png'
 ---
 
 <div class="text-4xl text-primary font-bold m-4">
@@ -304,7 +304,7 @@ $ git clone ...
 
 ---
 layout: image-left
-image: 'https://gyazo.com/00a1aa8aa3c4b04f93eb001d13cd3bbc'
+image: 'https://gyazo.com/00a1aa8aa3c4b04f93eb001d13cd3bbc.png'
 ---
 <div class="text-4xl text-primary font-bold m-4">
 Subversion
@@ -386,7 +386,7 @@ GitHub の登場によってオープンソース活動が世の中に急速に�
 
 ---
 layout: center-image
-image: 'https://gyazo.com/bca93c9f18f08f3da2db9058b405ba71'
+image: 'https://gyazo.com/bca93c9f18f08f3da2db9058b405ba71.png'
 ---
 
 <div class="text-2xl mb-8">
@@ -490,7 +490,7 @@ layout: center-image
 
 ---
 layout: center-image
-image: 'https://gyazo.com/239107de6b5d59a372531fc380c080d2'
+image: 'https://gyazo.com/239107de6b5d59a372531fc380c080d2.png'
 ---
 
 <div class="text-3xl font-bold mb-8">
