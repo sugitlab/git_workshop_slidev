@@ -63,9 +63,9 @@ ul {
 layout: image-right
 ---
 
-<div class="text-5xl font-bold text-primary pb-4">Thanks</div>
+<div class="text-5xl font-bold text-primary pb-4">Thanks <light-icon icon="color-picker" /> </div>
 
-<div class="text-2xl">
+<div class="text-xl">
   事前アンケートへのご協力ありがとうございました
 </div>
 
@@ -93,11 +93,8 @@ ul {
 </style>
 
 ---
-layout: image-right
+layout: center-image
 ---
-
-
-# Others
 
 - "git やらかしと対処法" : 6
 - "VSC と VCS Hosting Service のことについて知っていますか？" : 6
@@ -107,260 +104,336 @@ layout: image-right
 - "git の四方山話 (歴史など)" : 2
 - "git の基本的な使い方" : 1
 
----
-layout: image-right
----
-
-
-# Outline
-
-## 1. VCS って何?
-
-## 2. .git の中身
-
-## 3. ちょっと踏み込んだ git
-
-## 4. git のマージは 2 種類
-
-## 5. git-flow の Pros/Cons
-
-## 6. git でやらかさないためにすること
-
-## 7. GitHub の Issue で気をつけること
-
-## 8. OSS コントリビューションマナー
-
 <style>
-h2, h3, body {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
 }
 </style>
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# ① VCS って何?
-
-<style>
-h1 {
-  font-family: 'Kosugi Maru', 'Signika Negative', sans-serif
-}
-</style>
+<div class="text-3xl font-bold">早速ですが質問です</div>
 
 ---
+layout: center-image
+---
 
-# What's <span style="font-size:48px;">VCS</span> ?
+<div class="text-5xl font-bold">どうして Git を使っているのですか??</div>
 
-## Version Control System
 
-電子的なファイルの変更履歴を残しておき、<br>
-過去の状態に戻したり、変更内容を確認できるようにするソフトウェアの総称
+---
+layout: center-image
+---
+
+<div class="text-5xl font-bold">Git以外...選択肢あるの? 🤔</div>
 
 <br>
-<br>
-<br>
 
-- ソースコードを管理するためのものではなく<span style="color:red;">電子的な記録全て</span>が対象
-- 音楽・写真・テキスト・書類全て
+<v-click>
+  <div class="text-4xl font-bold">安心してください。Git でOKです 💁🏻‍♂️</div>
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold leading-relaxed">
+  ソースコードを管理するなら、現時点での最善はGitだと思います <br>
+  しかし、まだまだ Git ではない現場というのもあるのです… 
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold leading-relaxed">
+  これに対して<br>
+  「なんだ、時代遅れの会社か 🤷🏼‍♂️」<br>
+  と言う人は、大体何もわかってない人です。<br>
+  無視しましょう🙆‍♂️
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold leading-relaxed">
+  どうして Git が使われているのか <br>
+  Git以外の選択肢は何があるのか <br>
+  余談ですが少〜しお付き合いください
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-5xl font-bold text-primary pb-4">What's VCS</div>
+
+<div class="text-3xl"> Version Control System </div>
+
+<div class="rounded-2xl border-4 border-green-200 p-4 m-8">
+  電子的なファイルの変更履歴を残しておき、<br>
+  過去の状態に戻したり変更内容を確認できるようにするソフトウェアの総称
+</div>
+
+音楽・写真・テキスト・書類 など<span style="color:red;">電子的な記録全て</span>が対象
 
 数ある VCS ソフトウェアのうちの１つがみんな大好き <span style="font-size:32px">Git</span> です
 
 ---
-layout: image-right
+layout: center-image
 ---
 
+<div class="text-2xl m-8">
+Git 以外にも有名なバージョン管理システムがいくつかあります<br>
+いまでも選択肢に上がる現役バリバリなものは以下の3つです
+</div>
 
-# "VCS" Software
+<div class="text-3xl font-bold text-primary pb-4">
+Git / Subversion / Mercurial
+</div>
 
-<br>
+といっても、Mercurial を使っている人をみたことがないので<br>
 
-Git 以外にも有名なバージョン管理システムがいくつかあります。
-
-いまでも選択肢に上がる現役バリバリなものは以下の通りです
-
-## - Git
-
-## - Subversion
-
-## - Mercurial
+実質 Git vs Subversion です。
 
 ---
-layout: image-right
+layout: center-image
+image: '/assets/git-svn.png'
 ---
 
-
-# Why Git?
-
-<br>
-<span style="font-size:32px">
-いろいろな選択肢があるのに <br><br>
-どうしてみんな Git を使うんだろう??
-</span>
+<div class="text-4xl text-primary font-bold m-4">
+Google Trends
+</div>
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# Git is Champion?
+<div class="text-2xl mb-8 leading-relaxed">
+  ご覧の通り Git が流行る前は Subversion が最強でした🏋️‍♀️
+</div>
 
-<br>
+<div class="text-2xl mb-8 leading-relaxed">
+  まだ Subversion が現役の組織もたくさんあります (弊社でも現役です)<br>
+</div>
 
-## 🙅 NO 🙅
-
----
-layout: image-right
----
-
-
-# Git + GitHub is Champion !!
-
-<br>
-
-## 🙆‍♂️ YES 🙆‍♂️
-
-### I'm not sure
+<div class="text-2xl mb-8 leading-relaxed">
+  では、なぜここまで Git が普及したのでしょう
+</div>
 
 ---
 layout: image-right
+image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/440px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg'
+equal: false
 ---
 
 
-# Git + GitHub is Champion
-
-<br>
-
-Git が流行る前は Subversion が最強でした
-
-昭和からある企業ではまだ Subversion が現役のところもたくさんあります (弊社でも現役です)
-
-そんな Subversion から VCS 王座を奪ったのは
-
-<br>
-
-<span style="font-size:42px">Git ではなく GitHub</span> です（と思っています）
-
----
-layout: image-right
----
-
-
-# History
-
-<br>
-
+<div class="text-2xl mb-8 leading-relaxed">
 もともと Git は Linux 開発者の Linus Tovalds が
 
-「俺の オープンソースプロジェクトを支える VCS が無い！！ （全部気に入らない）」
+<br><br>
+「オープンソースでLinux作りたいんだけど
 
-と言い出してサクサク作ったものです。（二週間で作ったという話です… 🙈）
+　良いVCSないわ〜、作るわ〜」
+<br><br>
+
+
+と言い出してサクサク作ったものだそうです
+
+（二週間で作ったという話です… 🙈）
+</div>
+
 
 <v-click>
 
-そう、
-
-<span style="font-size:42px;">オープンソースのために作った</span>
-
-のです。
+<div class="text-3xl mb-8 leading-relaxed">
+  そう、オープンソースのために作ったのです。
+</div>
 
 </v-click>
 
 ---
-layout: image-right
+layout: center-image
 ---
 
-# Why Git is good for OpenSource ?
-
-<div>
-  Subversion は 中央集中型 と呼ばれます。<br><br><br>
-  <img src="/assets/centralized.png" width=200 />
-</div>
-<div>
-  一方、Git は 分散型 と呼ばれます。<br><br><br>
-  <img src="/assets/distributed.png" width=200 />
+<div class="text-4xl font-bold">
+  どうしてオープンソースにはGitが良いの？
 </div>
 
 ---
-layout: image-right
+layout: image-left
+image: '/assets/distributed.png'
+equal: false
 ---
 
-
-# Subversion
-
-<br>
-
-- リポジトリはサーバー側にのみ作ります
-- クライアント側（実装者）は特定の<span style="color:red;">歴史の１ページのみ</span>を引き出します
-- 変更の記録・履歴の閲覧など全ての操作はサーバーへの接続が必須です
-- バカでかい歴史やバカでかい単一ファイルを扱うのは Subversion が得意です
-  - Git で動画を扱ったらすぐに死にます 🧟‍♂️
-- Subversion の歴史は絶対です
-
-<div style="
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:42px;
-">
-  <img src="/assets/centralized.png" width=200 />
+<div class="text-2xl font-bold">
+  Git は 分散型 だからです
 </div>
 
 ---
 layout: image-right
+image: '/assets/centralized.png'
+equal: false
 ---
 
-# Git
-
-<br>
-
-- サーバー・クライアント関係なく、<span style="color:red;">すべての環境がリポジトリを持ちます</span>
-- 変更の記録・履歴の閲覧など全ての操作はオフラインでも OK です
-- 変更の共有（歴史の共有）をリポジトリの同期によって実現します
-- 軽いファイルを扱うことを基本とします（GitHub はデフォルトで Max 50MB です）
-- Git の歴史は簡単に書き換えることができます（権限があれば）
-
-<div style="
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:42px;
-">
-  <img src="/assets/distributed.png" width=200 />
+<div class="text-2xl font-bold">
+  一方、Subversion は 中央集中型 と呼ばれます
 </div>
 
 ---
-layout: image-right
+layout: image-left
+image: '/assets/git01.png'
 ---
 
-# Git v.s. Subversion
+<div class="text-4xl text-primary font-bold m-4">
+Git
+</div>
 
-<br>
-単純な特長だけを比較しても、甲乙つけがたい…。
+参加者全員がリポジトリをもちます
 
-<br>
-<br>
+```shell
+$ git clone ...
+```
 
-でも、オープンソースなら？
-
-みんなで作るのに、１箇所のサーバーに集中アクセスするの？
-
-<span style="color:red;">
-サーバー死んじゃう！！
-</span>
+っていうアレです
 
 ---
-layout: image-right
+layout: image-left
+image: '/assets/svn01.png'
 ---
-
-# GitHub makes Git Champion
+<div class="text-4xl text-primary font-bold m-4">
+Subversion
+</div>
 
 <br>
 
-GitHub の登場によって、 **オープンソース** 活動が世の中に急速に拡大しました。
+参加者はリポジトリをもちません
 
-その結果、 「Git 最強じゃね？」 となったのです。
+ファイルをもらって、変更して、登録します
 
-Git だけの力では「Git 良さそうだけど Subversion で別にいいわ」となっていたことでしょう。
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold">
+オープンソースで Subversionを使うと<br><br>
+
+みんなで１箇所のサーバーに集中アクセスすることになります<br><br>
+
+ログを見るだけでもサーバーにアクセスです <br><br>
+
+サーバー死んじゃう！！😨
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold leading-relaxed">
+　じゃあ Git 最強やん
+</div>
+
+---
+layout: center-image
+---
+
+
+<div class="text-5xl font-bold pb-4 mb-8">
+  Git is Champion?
+</div>
+
+<div class="text-5xl font-bold pb-4">
+  🙅 NO 🙅
+</div>
+
+---
+layout: center-image
+---
+
+
+<div class="text-5xl font-bold pb-4 mb-8">
+  Git + GitHub is Champion!!
+</div>
+
+<div class="text-5xl font-bold pb-4">
+  🙆‍♂️ YES 🙆‍♂️
+</div>
+
+<br><br>
+知らんけど 🤪
+
+
+---
+layout: center-image
+---
+
+<div class="text-5xl font-bold text-primary pb-4 mb-8">
+  GitHub <light-icon icon="brand-github" /> makes Git <light-icon icon="git-merge" />  Champion
+</div>
+
+
+<div class="text-xl">
+GitHub の登場によってオープンソース活動が世の中に急速に拡大しました。
+
+その結果「Git 最強じゃね？」となったのです。
+</div>
+
+---
+layout: center-image
+image: '/assets/git-svn.png'
+---
+
+<div class="text-2xl mb-8">
+GitHubのサービススタートが2010年です
+
+Gitの大逆転が始まっていますね
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold">長くなりましたが四方山話はこれでおしまいです</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold">実用的な話をしましょう</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold">実用的な話をしましょう</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl">
+適当なフォルダで
+</div>
+
+```shell
+$ git log
+```
+
+<div class="text-3xl">
+とたたくと
+</div>
+
+```shell
+fatal: not a git repository (or any of the parent directories): .git
+```
+
+と怒られます
 
 ---
 layout: image-right
