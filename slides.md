@@ -1,4 +1,5 @@
 ---
+title: git workshop
 theme: light-icons # https://github.com/lightvue/slidev-theme-light-icons
 image: "https://source.unsplash.com/collection/94734566/1920x1080"
 layout: intro
@@ -116,33 +117,34 @@ ul {
 layout: center-image
 ---
 
-<div class="text-3xl font-bold">早速ですが質問です</div>
+<div class="text-3xl">早速ですが質問です</div>
 
 ---
 layout: center-image
 ---
 
-<div class="text-5xl font-bold">どうして Git を使っているのですか??</div>
+<div class="text-5xl">どうして Git を使っているのですか??</div>
 
 
 ---
 layout: center-image
 ---
 
-<div class="text-5xl font-bold">Git以外...選択肢あるの? 🤔</div>
+<div class="text-5xl">Git以外...選択肢あるの? 🤔</div>
 
 <br>
 
 <v-click>
-  <div class="text-4xl font-bold">安心してください。Git でOKです 💁🏻‍♂️</div>
+  <div class="text-4xl">安心してください。Git でOKです 💁🏻‍♂️</div>
 </v-click>
 
 ---
 layout: center-image
 ---
 
-<div class="text-2xl font-bold leading-relaxed">
-  ソースコードを管理するなら、現時点での最善はGitだと思います <br>
+<div class="text-3xl leading-relaxed">
+  ソースコードを管理するなら<br>
+  現時点での最善はGitだと思います <br><br>
   しかし、まだまだ Git ではない現場というのもあるのです… 
 </div>
 
@@ -150,7 +152,7 @@ layout: center-image
 layout: center-image
 ---
 
-<div class="text-2xl font-bold leading-relaxed">
+<div class="text-3xl leading-relaxed">
   これに対して<br>
   「なんだ、時代遅れの会社か 🤷🏼‍♂️」<br>
   と言う人は、大体何もわかってない人です。<br>
@@ -161,7 +163,7 @@ layout: center-image
 layout: center-image
 ---
 
-<div class="text-2xl font-bold leading-relaxed">
+<div class="text-3xl leading-relaxed">
   どうして Git が使われているのか <br>
   Git以外の選択肢は何があるのか <br>
   余談ですが少〜しお付き合いください
@@ -271,8 +273,8 @@ image: 'https://gyazo.com/1057a847ce0b0e71b693d725a61da455.png'
 equal: false
 ---
 
-<div class="text-2xl font-bold">
-  Git は 分散型 だからです
+<div class="text-3xl font-bold">
+  Git は分散型だからです
 </div>
 
 ---
@@ -281,8 +283,8 @@ image: 'https://gyazo.com/9bd97cf0c60ba885cc02fb132c0083f2.png'
 equal: false
 ---
 
-<div class="text-2xl font-bold">
-  一方、Subversion は 中央集中型 と呼ばれます
+<div class="text-3xl font-bold">
+  Subversion は中央集中型です
 </div>
 
 ---
@@ -358,7 +360,7 @@ layout: center-image
 
 
 <div class="text-5xl font-bold pb-4 mb-8">
-  Git + GitHub is Champion!!
+  ”Git + GitHub” is Champion!!
 </div>
 
 <div class="text-5xl font-bold pb-4">
@@ -439,7 +441,7 @@ layout: center-image
 layout: center-image
 ---
 <div class="text-4xl">
-  gitリポジトリって何か分かりますか?
+  gitリポジトリって何か説明できますか?
 </div>
 
 
@@ -556,8 +558,8 @@ layout: center-image
 ```
 
 <v-click>
-  <div class="text-xl">
-  最初のコミットができました
+  <div class="text-2xl">
+  最初のコミットができましたね
   </div>
 </v-click>
 
@@ -588,19 +590,27 @@ layout: center-image
     └── tags
 ```
 
-<div class="text-xl">
-  なんかいろいろ増えました
+<div class="text-2xl">
+  .gitにいろいろ増えました
 </div>
 
 ---
 layout: image-right
 ---
 
+<div class="text-xl text-primary">
+  Commit
+</div>
+
 ```shell {all|1}
 [master (root-commit) d041e09] initialize repository
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
+
+<div class="text-xl text-primary">
+  .git/objects
+</div>
 
 ```shell {all|6-7}
 ├── objects
@@ -624,21 +634,20 @@ layout: image-right
 layout: center-image
 ---
 
+<div class="text-3xl">
+  解析してみましょう 🥳
+</div>
+
 ```shell
 ├── d0
     └── 41e090b548f4ab7c11848384f9e171e728fc3d
 ```
 
-<div class="text-2xl">
-  解析してみましょう
-</div>
-
-
 ---
 layout: center-image
 ---
 
-<div class="text-xl mb-4">
+<div class="text-2xl mb-4">
   git cat-file で解析できます
 </div>
 
@@ -663,13 +672,17 @@ committer SuGit <sgmt.snj@gmail.com> 1626708424 +0900
 │   └── pack
 ```
 
-おや??
+こちらも .git/object に同じIDのものがありますね。
 
 </v-click>
 
 ---
 layout: center-image
 ---
+
+<div class="text-2xl mb-4">
+  これも cat-file しましょう
+</div>
 
 ```shell {all|2}
 $ git cat-file -p c12d
@@ -690,7 +703,7 @@ $ git cat-file -p c12d
 │   └── pack
 ```
 
-ほう...
+ほう...　次は君ですね
 
 </v-click>
 
@@ -698,18 +711,27 @@ $ git cat-file -p c12d
 layout: center-image
 ---
 
+<div class="text-2xl mb-4">
+  これも cat-file しましょう
+</div>
+
 ```shell
 $ git cat-file -p 9dae
 test
 ```
 
-<div class="text-xl">
-  なんか見えてきましたね
+<br><br>
+<div class="text-2xl">
+  これは・・・、README.md の中身だ!!
 </div>
 
 ---
 layout: center-image
 ---
+
+<div class="text-2xl mb-4">
+  まとめると
+</div>
 
 ```shell
 ├── 9d
@@ -719,7 +741,7 @@ layout: center-image
 ├── d0
 │   └── 41e090b548f4ab7c11848384f9e171e728fc3d
 ```
-これがこう
+
 ```shell
 $ git cat-file -p 9dae
 test
@@ -730,7 +752,10 @@ tree c12d7c0ed49ad9c7aa938743ba6fdee54b6b7fe1
 author SuGit <sgmt.snj@gmail.com> 1626708424 +0900
 committer SuGit <sgmt.snj@gmail.com> 1626708424 +0900
 ```
-順番に見ていきましょう
+
+<div class="text-2xl mb-4">
+  3種類の情報が記録されている、と言うことのようですね。
+</div>
 
 ---
 layout: center-image
@@ -794,6 +819,8 @@ layout: center-image
 - tree: コミット履歴の情報
 - blob: ファイルのバックアップ
 
+<br><br>
+が、特定のコミットに対して記録されていると言うことがわかりました。
 <style>
 ul {
   text-align: left;
@@ -838,11 +865,11 @@ layout: center-image
 layout: center-image
 ---
 
-<div class="text-xl font-bold mb-4">
-log を見たいので、コミットをもう一度追加しておきましょう
+<div class="text-2xl font-bold mb-4">
+log が1つでは寂しいので、コミットをもう一度追加しておきましょう
 </div>
 
-README.md
+📄 README.md
 
 ```md
 - test
@@ -851,6 +878,8 @@ README.md
 ```
 
 <v-click>
+
+せっせとコミット
 
 ```shell
 ~/gitdir $ git add README.md
@@ -888,7 +917,11 @@ Date:   Tue Jul 20 00:27:04 2021 +0900
 layout: center-image
 ---
 
-```shell
+<div class="text-xl font-bold mb-4">
+このときのログファイルは...
+</div>
+
+```shell {all|8-12}
 ~/.git/logs $ tree
 ├── HEAD
 └── refs
@@ -907,11 +940,6 @@ Sugit <sgmt.snj@gmail.com> 1626710972 +0900
 commit: update README.md
 ```
 
-<div class="text-xl font-bold mb-4">
-これがログです
-</div>
-
-
 ---
 layout: center-image
 ---
@@ -926,8 +954,6 @@ d041e090b548f4ab7c11848384f9e171e728fc3d ## <- 自身のコミットハッシュ
 SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
 commit (initial): initialize repository with ## <- メッセージ
 ```
-
-となっています
 
 ---
 layout: center-image
@@ -1051,14 +1077,23 @@ git commit --amend -m "hogehoge"
 </div>
 
 <div class="text-xl">
-コミットの修正は単に log を書き換えているだけ
+コミットの修正は...
 </div>
 
-```shell
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  単に log を書き換えているだけ
+</div>
+
+```shell {3-4}
 0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
 d041e090b548f4ab7c11848384f9e171e728fc3d ## <- 自身のコミットハッシュ
-SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
-commit (initial): initialize repository ## <- メッセージ　<-- ここを書き換える
+SuGit <sgmt.snj@gmail.com> 1626708424 +0900 <-- ここを書き換える
+commit (initial): initialize repository <-- ここを書き換える
 ```
 
 ---
@@ -1070,6 +1105,12 @@ git merge test
 </div>
 
 test ブランチのマージは...?
+
+<br><br>
+
+<v-click>
+  2パターンに分かれます
+</v-click>
 
 ---
 layout: center-image
@@ -1100,7 +1141,7 @@ layout: center-image
 ---
 
 <div class="text-lg m-8">
-マージコミットが増えて... master の位置が変わります
+マージコミットが増えて master の位置が変わります
 </div>
 
 master
@@ -1131,22 +1172,19 @@ testだけが進化している場合
 </div>
 
 master
-<arrow x1="500" y1="240" x2="540" y2="280" color="#f99" width="2" arrowSize="1" />
+<arrow x1="480" y1="280" x2="520" y2="300" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
   c01((0000))
   c02((d041))
   c03((dd96))
-  c04{{....}}
   c05((a79b))
   style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  style c04 fill:#fff,stroke:#333,stroke-width:0px
-  c01 --> c02 --> c03 --> c04
+  c01 --> c02 --> c03
   c03 --> c05
 ```
 test
-<arrow x1="520" y1="420" x2="630" y2="380" color="#99f" width="2" arrowSize="1" />
-
+<arrow x1="510" y1="370" x2="630" y2="340" color="#99f" width="2" arrowSize="1" />
 ---
 layout: center-image
 ---
@@ -1180,9 +1218,95 @@ Git のマージが 2 種類ありますね
 
 アンケートの内容をやっと回収 🤫
 
+---
+layout: center-image
+---
+
+<div class="text-2xl text-primary font-bold m-8">
+  ① マージコミットが作られる git merge
+</div>
+
+<div class="text-2xl text-primary font-bold m-8">
+  ② master の位置だけズラす git merge
+</div>
 
 ---
 layout: center-image
 ---
 
-hogehoge
+<div class="text-3xl font-bold m-8">
+  どっちが良いんだろう🤨 ??
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
+  ケースバイケース 🤓
+</div>
+
+<v-click>
+
+ですが、
+<div class="text-3xl font-bold m-8">
+  どちらかと言えば ① の方が良い
+</div>
+
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold m-8">
+  ① non-first-forward
+</div>
+<div class="text-3xl text-primary font-bold m-8">
+  ② first-forward
+</div>
+
+といいます
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
+  ② は ① にできる
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-lg m-8">
+  マージコミットが無い = マージしたぞという "歴史が無い"
+</div>
+
+<div class="text-3xl font-bold m-8">
+  --no-ff オプション
+</div>
+
+```shell
+$ git merge branch-name --no-ff
+```
+
+<div class="text-lg m-8">
+  強制的にマージコミットを積むことができます
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
+  マージコミットは残しておいた方がベターです
+</div>
+
+<div class="text-2xl m-8">
+  マージコミットがない場合 <br> 
+  いつマージしたのか分からなくなるなど、<br>
+  マイナスな面を無視できないからです
+</div>
+
