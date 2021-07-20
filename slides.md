@@ -1307,6 +1307,211 @@ layout: center-image
 <div class="text-2xl m-8">
   マージコミットがない場合 <br> 
   いつマージしたのか分からなくなるなど、<br>
-  マイナスな面を無視できないからです
+  マイナスな面を無視できないからです <br>
+  例外もありますが… (これは後ほど)
 </div>
 
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+	git reset
+</div>
+
+こいつは歴史を書き換えるコマンドです ☠️
+
+---
+layout: center-image
+---
+
+git reset はローカルのコミットを取り消すくらいならOKです
+
+OKじゃない！！
+
+めっちゃ注意して！！
+
+---
+layout: center-image
+---
+
+git reset は "まだリモートに入れていない" ローカルのコミットに対してだけ使う。
+
+コミットはハッシュの連鎖でしたね。
+push済みのコミットに対して git reset をするということは、
+
+リモートで既に構築された連鎖をぶった斬るってことですね。
+
+---
+layout: center-image
+---
+
+天誅！！
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	git cherry-pick
+</div>
+
+つまみ食いコマンド
+
+---
+layout: center-image
+---
+
+別のブランチで作業した特定のコミットにおける変更を "別のコミットとして" 取り込みます。
+rebaseでやった打ち消しコミットに似ていますね。
+同じ変更を行う "別の" コミットです。
+
+誤：コミットを取り出す
+正：変更を取り出す
+
+このコマンドは歴史を書き換えないので安心です。
+リリースコントロールとして使うことが多いですね。
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	git stash
+</div>
+
+これはめっちゃ使います。
+
+---
+layout: center-image
+---
+
+新機能の作業用ブランチで作業中
+「急で悪いけど、このバグ直して欲しいんや」
+とか言われた時に
+「うぅぅぅ・・・まだコミットしたくないんだよなぁ・・」
+ということがあります。
+そんなときに git stash です。
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	git rebase
+</div>
+
+とっても便利でそこそこ危険なヤツ
+ちゃんと使いこなそう
+
+---
+layout: center-image
+---
+
+rebase はあるブランチのコミットを
+**削除**して、**パッチに変換**して
+別のブランチの歴史につなげるものです
+
+平行線の歴史を一直線にすることができます
+
+「歴史を・・・書き換えたなぁぁぁぁ」
+
+リモートへの影響は常に意識しましょう
+
+---
+layout: center-image
+---
+
+gitの履歴は綺麗な方が良い？
+
+綺麗とは？一直線であること？NO！
+
+歴史を書き換えるとは、変更とコミットハッシュの関係をぶった斬るということ
+
+例えIssue管理者からすると、Issueに紐付けたコミットハッシュが暴走するととても大変です
+
+ほどほどにしましょう。
+
+なお、git rebaseについても無闇にリモートに対して行うと・・・
+
+
+---
+layout: center-image
+---
+
+天誅！！
+
+---
+layout: center-image
+---
+
+git rebase はいつ使うのか？
+PullRequestのときです
+
+---
+layout: center-image
+---
+
+レビュワーの気持ちになろう
+
+PRを受け取ったら、そのPRはちょっと昔のコミットから生えていた
+
+結果、マージをしないといけないのはレビュワーということになる
+コンフリクトしたとすれば、、、それもレビュワーの仕事
+
+OSSでは結構嫌がられます
+
+そこで、rebaseしてPRの変更コミットを最新から生やします
+コンフリクトの解消はPRの作者の仕事、ということです。
+
+---
+layout: center-imag
+---
+
+GitHubのPR機能には Rebase マージと Squash マージが用意されています。
+本流の歴史が主役なので、こういう機能があるんですね。
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	git commit --squash
+</div>
+
+複数のコミットを1つにまとめる
+
+---
+layout: center-image
+---
+
+コミットが細かくバラバラと切られたPRほどレビューしずらいものはありません
+
+めちゃでかPRの場合はコミットを分けて欲しいですが、
+
+そもそもめちゃでかPR自体がNGです
+
+---
+layout: center-image
+---
+
+これらのPRに関するマナーはOSSコントリビューションマナーにも通じるところがあります
+
+---
+layout: center-image
+---
+
+PRマナー
+
+---
+layout: center-image
+---
+
+OSS コントリビューションマナー
+
+---
+layout: center-image
+---
+
+hogehoge
