@@ -205,7 +205,7 @@ Git / Subversion / Mercurial
 
 ---
 layout: center-image
-image: 'https://gyazo.com/bca93c9f18f08f3da2db9058b405ba71.png'
+image: 'git-svn.png'
 ---
 
 <div class="text-4xl text-primary font-bold m-4">
@@ -1465,7 +1465,7 @@ OSSでは結構嫌がられます
 コンフリクトの解消はPRの作者の仕事、ということです。
 
 ---
-layout: center-imag
+layout: center-image
 ---
 
 GitHubのPR機能には Rebase マージと Squash マージが用意されています。
