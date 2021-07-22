@@ -552,7 +552,7 @@ layout: center-image
 ~/gitdir $ echo test > README.md  <-- README.mdを作って
 ~/gitdir $ git add README.md  <-- ステージングにして
 ~/gitdir $ git commit -m "initialize repository"  <-- コミット
-[master (root-commit) d041e09] initialize repository
+[main (root-commit) d041e09] initialize repository
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
@@ -574,7 +574,7 @@ layout: center-image
 │   ├── HEAD
 │   └── refs
 │       └── heads
-│           └── master
+│           └── main
 ├── objects
 │   ├── 9d
 │   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
@@ -586,7 +586,7 @@ layout: center-image
 │   └── pack
 └── refs
     ├── heads
-    │   └── master
+    │   └── main
     └── tags
 ```
 
@@ -603,7 +603,7 @@ layout: image-right
 </div>
 
 ```shell {all|1}
-[master (root-commit) d041e09] initialize repository
+[main (root-commit) d041e09] initialize repository
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
@@ -845,7 +845,7 @@ layout: center-image
 │   ├── HEAD
 │   └── refs
 │       └── heads
-│           └── master
+│           └── main
 ├── objects
 │   ├── 9d
 │   │   └── aeafb9864cf43055ae93beb0afd6c7d144bfa4
@@ -857,7 +857,7 @@ layout: center-image
 │   └── pack
 └── refs
     ├── heads
-    │   └── master
+    │   └── main
     └── tags
 ```
 
@@ -884,7 +884,7 @@ log が1つでは寂しいので、コミットをもう一度追加しておき
 ```shell
 ~/gitdir $ git add README.md
 ~/gitdir $ git commit -m "update README.md"
-[master dd96c8f] update README.md
+[main dd96c8f] update README.md
 1 file changed, 3 insertions(+), 1 deletion(-)
 ```
 
@@ -896,7 +896,7 @@ layout: center-image
 
 ```shell {all|2-6}
 ~/gitdir$ git log
-commit dd96c8f8bbcff86922b3db1f94aa38c4c6f3d633 (HEAD -> master)
+commit dd96c8f8bbcff86922b3db1f94aa38c4c6f3d633 (HEAD -> main)
 Author: Sugit <sgmt.snj@gmail.com>
 Date:   Tue Jul 20 01:09:32 2021 +0900
 
@@ -926,7 +926,7 @@ layout: center-image
 ├── HEAD
 └── refs
     └── heads
-        └── master
+        └── main
 
 ~/.git/logs $ cat HEAD
 0000000000000000000000000000000000000000
@@ -1120,7 +1120,7 @@ layout: center-image
 それぞれが独自に進化している場合
 </div>
 
-master
+main
 <arrow x1="520" y1="220" x2="630" y2="260" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
@@ -1141,10 +1141,10 @@ layout: center-image
 ---
 
 <div class="text-lg m-8">
-マージコミットが増えて master の位置が変わります
+マージコミットが増えて main の位置が変わります
 </div>
 
-master
+main
 <arrow x1="520" y1="220" x2="700" y2="300" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
@@ -1171,7 +1171,7 @@ layout: center-image
 testだけが進化している場合
 </div>
 
-master
+main
 <arrow x1="480" y1="280" x2="520" y2="300" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
@@ -1190,10 +1190,10 @@ layout: center-image
 ---
 
 <div class="text-lg m-8">
-git merge しても masterの位置が変わるだけです
+git merge しても mainの位置が変わるだけです
 </div>
 
-master
+main
 <arrow x1="520" y1="270" x2="600" y2="300" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
@@ -1227,7 +1227,7 @@ layout: center-image
 </div>
 
 <div class="text-2xl text-primary font-bold m-8">
-  ② master の位置だけズラす git merge
+  ② main の位置だけズラす git merge
 </div>
 
 ---
@@ -1273,16 +1273,109 @@ layout: center-image
 ---
 
 <div class="text-3xl font-bold m-8">
-  ② は ① にできる
+  何が違うの？
 </div>
 
 ---
 layout: center-image
 ---
 
-<div class="text-lg m-8">
+<div class="text-3xl text-primary font-bold m-8">
+  ① non-first-forward
+</div>
+
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((9437))
+  c05((a79b))
+  c06((88a0))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c04
+  c03 --> c05
+  c04 --> c06
+  c05 --> c06
+```
+
+<div class="text-3xl text-primary font-bold m-8">
+  ② first-forward
+</div>
+
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c05((a79b))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c05
+```
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold m-8">
+  ① non-first-forward
+</div>
+
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((9437))
+  c05((a79b))
+  c06((88a0))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style c05 fill:#afa,stroke:#dfd,stroke-width:1px
+  style c06 fill:#afa,stroke:#dfd,stroke-width:1px
+  c01 --> c02 --> c03 --> c04
+  c03 --> c05
+  c04 --> c06
+  c05 --> c06
+```
+
+<div class="text-3xl text-primary font-bold m-8">
+  ② first-forward
+</div>
+
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((a79b))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c04
+```
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
   マージコミットが無い = マージしたぞという "歴史が無い"
 </div>
+
+<div class="text-2xl font-bold m-8">
+  歴史は大事にしようぜ 😎
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-4xl font-bold m-8">
+  ② は ① にできる 🤗
+</div>
+
+---
+layout: center-image
+---
 
 <div class="text-3xl font-bold m-8">
   --no-ff オプション
@@ -1293,7 +1386,7 @@ $ git merge branch-name --no-ff
 ```
 
 <div class="text-lg m-8">
-  強制的にマージコミットを積むことができます
+  これで強制的にマージコミットを積むことができます
 </div>
 
 ---
@@ -1304,12 +1397,48 @@ layout: center-image
   マージコミットは残しておいた方がベターです
 </div>
 
+<v-click>
+
 <div class="text-2xl m-8">
-  マージコミットがない場合 <br> 
-  いつマージしたのか分からなくなるなど、<br>
-  マイナスな面を無視できないからです <br>
-  例外もありますが… (これは後ほど)
+  <img style="margin: auto" src="https://pbs.twimg.com/profile_images/1070038810111565824/1omCvDAZ.jpg" />
+  それってあなたの感想ですよね？
 </div>
+
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
+  はい、残念ながら私の感想です 😥
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-8">
+  残念ですが、世の中には一定数いるのです。
+</div>
+
+<div class="text-2xl font-bold m-8">
+　正しい歴史 &lt;&lt; 美しいコミットグラフ 派が... 😰
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-4">
+  コミットグラフの美しさを意識するのは<br>
+  OSSにPRを出すときだけで良い!!
+</div>
+<div class="text-2xl font-bold m-4">
+  派です
+</div>
+
+OSSコントリビューションのお作法については後ほど 🙌
 
 ---
 layout: center-image
@@ -1319,34 +1448,275 @@ layout: center-image
 	git reset
 </div>
 
-こいつは歴史を書き換えるコマンドです ☠️
+こいつは歴史を書き換える危険なコマンドです ☠️
 
 ---
 layout: center-image
 ---
 
-git reset はローカルのコミットを取り消すくらいならOKです
+<div class="text-2xl font-bold mb-4">
+  👽👽ローカルのコミットを取り消すくらいならOKです👽👽
+</div>
 
-OKじゃない！！
+<v-click>
 
-めっちゃ注意して！！
+<div class="text-3xl font-bold mb-4">
+  OKじゃない！！<br>
+  めっちゃ注意して！！
+</div>
+
+</v-click>
 
 ---
 layout: center-image
 ---
 
-git reset は "まだリモートに入れていない" ローカルのコミットに対してだけ使う。
+<div class="text-2xl font-bold mb-4">
+git reset は "まだリモートに入れていない" <br> ローカルのコミットに対してだけ安全です
+</div>
 
 コミットはハッシュの連鎖でしたね。
+
 push済みのコミットに対して git reset をするということは、
 
-リモートで既に構築された連鎖をぶった斬るってことですね。
+リモートで既に構築された **コミットの連鎖を破壊する** ってことですね。
 
 ---
 layout: center-image
 ---
 
-天誅！！
+<div class="text-2xl font-bold">
+  あ、"dd96" のコミット、ミスってるわ〜
+</div>
+<div class="text-2xl font-bold mb-8">
+  git reset しよ
+</div>
+
+<div class="text-xl text-primary font-bold">
+  REMOTE
+</div>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03
+```
+
+<div class="text-xl text-primary font-bold mt-8">
+  LOCAL
+</div>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04[staging]
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c04
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-8">
+  git reset したったぜ
+</div>
+
+<div class="text-xl text-primary font-bold">
+  REMOTE
+</div>
+```mermaid
+graph LR
+  d01((0000))
+  d02((d041))
+  d03((dd96))
+  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  d01 --> d02 --> d03
+```
+
+<div class="text-xl text-primary font-bold mt-8">
+  LOCAL
+</div>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03[staging]
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-8">
+  新しい変更をコミットだ!!
+</div>
+
+<div class="text-xl text-primary font-bold">
+  REMOTE
+</div>
+```mermaid
+graph LR
+  e01((0000))
+  e02((d041))
+  e03((dd96))
+  style e01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  e01 --> e02 --> e03
+```
+
+<div class="text-xl text-primary font-bold mt-8">
+  LOCAL
+</div>
+```mermaid
+graph LR
+  f01((0000))
+  f02((d041))
+  f03((e292))
+  style f01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style f03 fill:#dfd,stroke:#333,stroke-width:1px
+  f01 --> f02 --> f03
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-8">
+  リモートにプッシュだ.... あれ?!
+</div>
+
+<div class="text-xl text-primary font-bold">
+  REMOTE
+</div>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03
+```
+
+<div class="text-xl text-primary font-bold mt-8">
+  LOCAL
+</div>
+```mermaid
+graph LR
+  d01((0000))
+  d02((d041))
+  d03((e292))
+  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d03 fill:#dfd,stroke:#333,stroke-width:1px
+  d01 --> d02 --> d03
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-8">
+  コミット = 自身のハッシュ + 直前のハッシュ
+</div>
+
+```mermaid
+graph LR
+  d01((d041))
+  d03((e292))
+  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d03 fill:#dfd,stroke:#333,stroke-width:1px
+  d01 --> d03
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-4">
+  ハッシュでつなぐと…
+</div>
+
+<div class="text-xl text-primary font-bold">
+  REMOTE
+</div>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03
+```
+
+<div class="text-xl text-primary font-bold">
+  COMMIT
+</div>
+```mermaid
+graph LR
+  d01((d041))
+  d03((e292))
+  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d03 fill:#dfd,stroke:#333,stroke-width:1px
+  d01 --> d03
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-4">
+  mainブランチが2つに分離してしまう… = push error
+</div>
+
+<div class="text-xl text-primary font-bold">
+  REMOTE
+</div>
+
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  d03((e292))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d03 fill:#dfd,stroke:#333,stroke-width:1px
+  c01 --> c02 --> c03
+  c02 --> d03
+```
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-4">
+  「push errro 対応」 ググる
+</div>
+<br>
+<div class="text-2xl font-bold m-4">
+  git push -f でできるんだって!!
+</div>
+
+<v-click>
+  <div class="text-2xl font-bold m-4">
+    ↑ 犯罪です
+  </div>
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+git reset は明らかに push してないことを事前に確認
+</div>
+
+<div class="text-2xl font-bold mb-4">
+よくわからないなら使わない！
+</div>
 
 ---
 layout: center-image
@@ -1362,15 +1732,128 @@ layout: center-image
 layout: center-image
 ---
 
-別のブランチで作業した特定のコミットにおける変更を "別のコミットとして" 取り込みます。
-rebaseでやった打ち消しコミットに似ていますね。
-同じ変更を行う "別の" コミットです。
+<div class="text-xl text-primary font-bold">
+  BRANCH-A
+</div>
+```mermaid
+graph LR
+  c01((a901))
+  c02((d041))
+  c03((dd96))
+  style c03 fill:#dfd,stroke:#333,stroke-width:1px
+  c01 --> c02 --> c03
+```
 
-誤：コミットを取り出す
-正：変更を取り出す
+<div class="text-xl text-primary font-bold">
+  BRANCH-B
+</div>
+```mermaid
+graph LR
+  d01((a901))
+  d02((d041))
+  d03((e292))
+  d04((41d2))
+  style d03 fill:#aef,stroke:#333,stroke-width:1px
+  style d04 fill:#aef,stroke:#333,stroke-width:1px
+  d01 --> d02 --> d03 --> d04
+```
 
-このコマンドは歴史を書き換えないので安心です。
-リリースコントロールとして使うことが多いですね。
+<div class="text-xl font-bold m-8">
+  A に B から e292 だけ取り込みたい
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold m-8">
+  git cherry-pick e292...
+</div>
+
+<div class="text-xl">
+  cherry-pick は 競合しやすいので、我慢して手作業で修正しましょう。
+</div>
+
+---
+layout: center-image
+---
+
+別のブランチで作業したコミットにおける **変更**を 
+
+<span class="text-2xl font-bold">
+"別のコミットとして"
+</span>
+取り込みます。
+
+<v-click>
+
+```mermaid
+graph LR
+  d03((e292))
+  d04{{patch}}
+  style d03 fill:#aef,stroke:#333,stroke-width:1px
+  style d04 fill:#aef,stroke:#333,stroke-width:1px
+  d03 -- パッチを作る --> d04
+```
+
+</v-click>
+
+<v-click>
+
+<div class="text-xl text-primary font-bold">
+  BRANCH-A
+</div>
+```mermaid
+graph LR
+  c01((a901))
+  c02((d041))
+  c03((dd96))
+  c04((ae22))
+  style c03 fill:#dfd,stroke:#333,stroke-width:1px
+  style c04 fill:#aef,stroke:#333,stroke-width:1px
+  c01 --> c02 --> c03 -- パッチからコミットを作る --> c04
+```
+</v-click>
+
+---
+layout: center-image
+---
+
+<br><br>
+<div class="text-2xl font-bold">
+コミットハッシュが異なるところがポイントです
+</div>
+<div class="text-2xl font-bold">
+e292 != ae22
+</div>
+
+<br><br>
+
+<v-click>
+  <div class="text-2xl font-bold">
+    もしハッシュが一緒だったら??<br>
+    何がやばいか考えてみてください 🤔
+  </div>
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold">
+
+このコマンドは歴史を書き換えないので安心です
+<br>
+<br>
+リリースコントロールのために使ったり
+<br>
+<br>
+別ブランチで誰かがやった神対応が欲しかったり
+<br>
+<br>
+
+そんなときにつかいます
+</div>
 
 ---
 layout: center-image
@@ -1386,91 +1869,204 @@ layout: center-image
 layout: center-image
 ---
 
-新機能の作業用ブランチで作業中
-「急で悪いけど、このバグ直して欲しいんや」
+新機能の作業用ブランチで作業中...
+<br><br>
+
+<div class="text-xl font-bold">
+🥸「急で悪いけど、このバグ直して欲しいんや」
+</div>
+
+<br>
 とか言われた時に
-「うぅぅぅ・・・まだコミットしたくないんだよなぁ・・」
-ということがあります。
+<br><br>
+
+<div class="text-xl font-bold">
+🥺「うぅぅぅ・・・まだコミットしたくないんだよなぁ・・」
+</div>
+
+<br>ということがあります。
+
 そんなときに git stash です。
 
 ---
 layout: center-image
 ---
 
-<div class="text-3xl text-primary font-bold md-4">
+- git stash save
+- git stash list
+- git stash apply
+- git stash drop
+- git stash pop (apply して drop する)
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-8">
 	git rebase
 </div>
 
-とっても便利でそこそこ危険なヤツ
-ちゃんと使いこなそう
+ちょっと危険なヤツ
+
+ちゃんと理解しておこう
 
 ---
 layout: center-image
 ---
 
 rebase はあるブランチのコミットを
-**削除**して、**パッチに変換**して
-別のブランチの歴史につなげるものです
+別のブランチの歴史につなげます
 
+topic で rebase してみましょう
+
+```mermaid
+graph LR
+  d01((a311))
+  d02((92fb))
+  d03((e21b))
+  d04((52b1))
+  e01((31c2))
+  e02((8a24))
+  d01 --> d02 --> d03 --> d04
+  d03 --> e01 --> e02
+  subgraph main
+    d04
+  end
+  subgraph topic
+    e02
+  end
+```
+
+---
+layout: center-image
+---
+
+同じ変更を別のコミットに変換して、繋げます（ハッシュが異なる）
+
+```mermaid
+graph LR
+  d01((a311))
+  d02((92fb))
+  d03((e21b))
+  d04((52b1))
+  d05((8ab2))
+  d06((c1be))
+  e01((31c2))
+  e02((8a24))
+  d01 --> d02 --> d03 --> d04 --> d05 --> d06
+  d03 --> e01 --> e02
+  e01 -.-> d05
+  e02 -.-> d06
+  subgraph main
+    d04
+  end
+  subgraph topic
+    d06
+  end
+  style e01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style e02 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+```
+
+---
+layout: center-image
+---
+
+rebase 後は一直線になります
+
+```mermaid
+graph LR
+  d01((a311))
+  d02((92fb))
+  d03((e21b))
+  d04((52b1))
+  d05((8ab2))
+  d06((c1be))
+  d01 --> d02 --> d03 --> d04 --> d05 --> d06
+  subgraph main
+    d04
+  end
+  subgraph topic
+    d06
+  end
+```
+
+---
+layout: center-image
+---
+
+<br><br>
 平行線の歴史を一直線にすることができます
 
-「歴史を・・・書き換えたなぁぁぁぁ」
+つまり、**「歴史を書き換えます」**
 
-リモートへの影響は常に意識しましょう
-
----
-layout: center-image
----
-
-gitの履歴は綺麗な方が良い？
-
-綺麗とは？一直線であること？NO！
-
-歴史を書き換えるとは、変更とコミットハッシュの関係をぶった斬るということ
-
-例えIssue管理者からすると、Issueに紐付けたコミットハッシュが暴走するととても大変です
-
-ほどほどにしましょう。
-
-なお、git rebaseについても無闇にリモートに対して行うと・・・
-
+リモートへの影響は常に意識しましょう（何度でも言います）
 
 ---
 layout: center-image
 ---
 
-天誅！！
-
----
-layout: center-image
----
-
+<div class="text-3xl font-bold">
 git rebase はいつ使うのか？
-PullRequestのときです
+</div>
 
 ---
 layout: center-image
 ---
 
+<div class="text-3xl font-bold mb-16">
+OSS への Pull Requestのときです
+</div>
+
+<div class="text-2xl">
+main へのマージ前にするケースもあるようです。
+<br>
+これは組織の方針に合わせてください。
+<br>
+なお、私はしません。
+</div>
+
+---
+layout: center-image
+---
+
+
+<div class="text-3xl font-bold mb-8">
 レビュワーの気持ちになろう
+</div>
 
-PRを受け取ったら、そのPRはちょっと昔のコミットから生えていた
+<div class="text-xl">
+PRを受け取ったら、そのPRはちょっと昔のコミットから生えていた。
 
-結果、マージをしないといけないのはレビュワーということになる
-コンフリクトしたとすれば、、、それもレビュワーの仕事
+おいおい、マージすんの俺かよ・・・
 
-OSSでは結構嫌がられます
+PR 断ろ www
+</div>
 
-そこで、rebaseしてPRの変更コミットを最新から生やします
-コンフリクトの解消はPRの作者の仕事、ということです。
+<br><br>
+というのが割とあります。
+
+事前にリベースして、コンフリクトのないPRを作りましょう。
 
 ---
 layout: center-image
 ---
+<div class="text-xl font-bold mb-8">
+  綺麗な歴史は大事
+  <br><br>
+  でも、OSSの場合は、
 
-GitHubのPR機能には Rebase マージと Squash マージが用意されています。
-本流の歴史が主役なので、こういう機能があるんですね。
+  歴史の持ち主は自分ではありません
 
+  いくらコントリビューターと言えども、配慮が必要です。
+</div>
 
 ---
 layout: center-image
@@ -1486,11 +2082,15 @@ layout: center-image
 layout: center-image
 ---
 
-コミットが細かくバラバラと切られたPRほどレビューしずらいものはありません
-
-めちゃでかPRの場合はコミットを分けて欲しいですが、
-
-そもそもめちゃでかPR自体がNGです
+<div class="text-2xl font-bold md-4">
+  コミットが細かくバラバラと切られたPRはなかなかレビューが大変です。
+</div>
+<br><br>
+<div class="text-xl md-4">
+  レビュアーの気持ちになって、 1 Issue - 1 Commit を心がけましょう。<br>
+  でも、作業中は細かくコミットしておきたい。<br>
+  そんな時に squash です。
+</div>
 
 ---
 layout: center-image
