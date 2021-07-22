@@ -2096,22 +2096,248 @@ layout: center-image
 layout: center-image
 ---
 
-これらのPRに関するマナーはOSSコントリビューションマナーにも通じるところがあります
+<div class="text-3xl font-bold">
+せっかく OSS へ PR を投げる話になったので、
+
+コントリビューションマナーについて紹介します
+</div>
+
+
+---
+layout: image-left
+image: 'https://i.gyazo.com/0d53da503208419287de5a8f2cd03b13.png'
+---
+
+<div class="text-3xl font-bold">
+まずこれを読む
+</div>
+
+https://github.com/github/opensource.guide
+
+https://opensource.guide/how-to-contribute/
+
+
+---
+layout: center-image
+image: 'https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg'
+---
+
+<div class="text-3xl font-bold">
+  この記事がとてもよかったので引用して紹介します
+</div>
+
+https://qvault.io/open-source/contributing-to-open-source/
 
 ---
 layout: center-image
 ---
 
-PRマナー
+<div class="text-3xl font-bold">
+  👕 Tシャツ事件をご存知だろうか...
+</div>
 
 ---
 layout: center-image
 ---
 
-OSS コントリビューションマナー
+<div class="text-3xl font-bold mb-8">
+  👕 Tシャツ事件
+</div>
+
+Hacktoberfest という団体がやったイベントで
+
+"なんでもいいから OSS に PR を 4 つ作ったらTシャツあげます!!"
+
+が事件を起こしました
 
 ---
 layout: center-image
 ---
 
-hogehoge
+<div class="text-7xl font-bold mb-8">
+  クソ PR の大量発生
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-6xl font-bold mb-8">
+  憤怒するOSSメンテナー
+</div>
+
+---
+layout: center-image
+image: 'https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg'
+---
+
+<div class="text-3xl font-bold">
+  ちなみにこの記事はこの事件がきっかけで生まれました
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold">
+  6 Things to Avoid When Contributing to OSS
+</div>
+
+- Pull Requests Should Handle ONE Thing
+- Don't Break Consistency
+- Don't Start Work Without Approval
+- Don't Re-Open Known Problems/Solutions
+- Squash Those Commits
+- Be Meaningful
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Pull Requests Should Handle ONE Thing
+</div>
+
+<div class="text-2xl">
+  PRでは1つのトピックに関するもののみ
+</div>
+
+<br><br>
+<div class="text-xl">
+<v-click>
+
+  バグAを修正したよ
+
+  ついでに xxx の書き方が非効率だったから直してやったぜ
+
+</v-click>
+
+<v-click>
+
+<br><br>
+<div class="text-3xl">
+  はぁぁぁぁああ!??!?!?!?
+</div>
+
+</v-click>
+
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Don't Break Consistency
+</div>
+
+<div class="text-2xl">
+  一貫性を守ること （空気を読んでくれ…）
+</div>
+
+<br><br>
+<div class="text-xl">
+  コーディングスタイルを守って欲しい、ということです。
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Don't Start Work Without Approval
+</div>
+
+<div class="text-2xl">
+  急にPR送ってこないで…
+
+  まずは Issue たてて、コミュニケーションとってからやで…
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Don't Re-Open Known Problems/Solutions
+</div>
+
+<div class="text-2xl">
+  Issue立てる前に似たIssueが既に無いか確認しておいてや…
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Squash Those Commits
+</div>
+
+<div class="text-2xl">
+  PR内のコミットは squash でまとめておいて欲しい…
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Be Meaningful
+</div>
+
+<div class="text-2xl">
+  なるべく意義のある提案をして欲しい
+</div>
+
+<div class="text-xl">
+  そんなんどうでもええねん！！って言わさないで欲しいということ。
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  いいコントリビューションはいいIssueから
+</div>
+
+
+<div class="text-xl">
+  コントリビューションマナーを見ると、Issueの大切さがよくわかると思います
+
+  いいIssueを目指しましょう
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Issue を立てる時に気をつけること
+</div>
+
+- Issue の重複はなるべくやめて…
+- 感想？観測？どっち？
+- テンプレート使ってよ… 🥺
+- 情報が少なすぎる
+- タイトルから中身が分からない
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
