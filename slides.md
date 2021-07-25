@@ -2299,11 +2299,14 @@ https://opensource.guide/how-to-contribute/
 
 ---
 layout: center-image
-image: 'https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg'
 ---
 
 <div class="text-3xl font-bold">
   この記事がとてもよかったので引用して紹介します
+</div>
+
+<div class="flex align-center justify-center">
+  <img src="https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg" class="w-1/5 drop-shadow-lg" />
 </div>
 
 https://qvault.io/open-source/contributing-to-open-source/
@@ -2348,11 +2351,14 @@ layout: center-image
 
 ---
 layout: center-image
-image: 'https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg'
 ---
 
 <div class="text-3xl font-bold">
   ちなみにこの記事はこの事件がきっかけで生まれました
+</div>
+
+<div class="flex align-center justify-center">
+  <img src="https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg" class="w-1/5 drop-shadow-lg" />
 </div>
 
 ---
