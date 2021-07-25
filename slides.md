@@ -948,7 +948,7 @@ layout: center-image
 分解すると
 </div>
 
-```shell
+```shell {all|1}
 0000000000000000000000000000000000000000 ## <- 1つ前のコミットハッシュ
 d041e090b548f4ab7c11848384f9e171e728fc3d ## <- 自身のコミットハッシュ
 SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
@@ -967,6 +967,7 @@ layout: center-image
 layout: center-image
 ---
 
+<div class="text-lg mt-8">コミット1つ目</div>
 ```mermaid
 graph LR
   c01((0000))
@@ -982,6 +983,7 @@ SuGit <sgmt.snj@gmail.com> 1626708424 +0900 ## <- コミット情報
 commit (initial): initialize repository  ## <- メッセージ
 ```
 
+<div class="text-lg mt-8">コミット2つ目</div>
 ```mermaid
 graph LR
   c02((d041))
@@ -1045,7 +1047,7 @@ test ブランチの作成<br>
 layout: center-image
 ---
 
-<div class="text-3xl text-primary font-bold mb-4">
+<div class="text-3xl font-bold mb-4">
 コミットハッシュに名前をつけて保存しただけ
 </div>
 
@@ -1085,8 +1087,8 @@ git commit --amend -m "hogehoge"
 layout: center-image
 ---
 
-<div class="text-3xl text-primary font-bold mb-4">
-  単に log を書き換えているだけ
+<div class="text-3xl font-bold mb-4">
+  単に log のファイルを書き換えているだけ
 </div>
 
 ```shell {3-4}
@@ -1109,19 +1111,23 @@ test ブランチのマージは...?
 <br><br>
 
 <v-click>
+
+<div class="text-xl mb-4">
   2パターンに分かれます
+</div>
+
 </v-click>
 
 ---
 layout: center-image
 ---
 
-<div class="text-lg m-8">
-それぞれが独自に進化している場合
+<div class="text-xl font-bold m-8">
+それぞれのbranchが独自に進化している場合
 </div>
 
 main
-<arrow x1="520" y1="220" x2="630" y2="260" color="#f99" width="2" arrowSize="1" />
+<arrow x1="520" y1="220" x2="590" y2="260" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
   c01((0000))
@@ -1134,13 +1140,13 @@ graph LR
   c03 --> c05
 ```
 test
-<arrow x1="520" y1="420" x2="630" y2="380" color="#99f" width="2" arrowSize="1" />
+<arrow x1="520" y1="420" x2="590" y2="380" color="#99f" width="2" arrowSize="1" />
 
 ---
 layout: center-image
 ---
 
-<div class="text-lg m-8">
+<div class="text-xl font-bold m-8">
 マージコミットが増えて main の位置が変わります
 </div>
 
@@ -1158,7 +1164,7 @@ graph LR
   c01 --> c02 --> c03 --> c04
   c03 --> c05
   c04 --> c06
-  c05 --> c06
+  c05 -.-> c06
 ```
 test
 <arrow x1="520" y1="420" x2="580" y2="390" color="#99f" width="2" arrowSize="1" />
@@ -1167,7 +1173,7 @@ test
 layout: center-image
 ---
 
-<div class="text-lg m-8">
+<div class="text-xl font-bold m-8">
 testだけが進化している場合
 </div>
 
@@ -1189,12 +1195,12 @@ test
 layout: center-image
 ---
 
-<div class="text-lg m-8">
+<div class="text-xl font-bold m-8">
 git merge しても mainの位置が変わるだけです
 </div>
 
 main
-<arrow x1="520" y1="270" x2="600" y2="300" color="#f99" width="2" arrowSize="1" />
+<arrow x1="520" y1="270" x2="590" y2="300" color="#f99" width="2" arrowSize="1" />
 ```mermaid
 graph LR
   c01((0000))
@@ -1205,14 +1211,14 @@ graph LR
   c01 --> c02 --> c03 --> c05
 ```
 test
-<arrow x1="510" y1="370" x2="600" y2="350" color="#99f" width="2" arrowSize="1" />
+<arrow x1="510" y1="370" x2="590" y2="350" color="#99f" width="2" arrowSize="1" />
 
 
 ---
 layout: center-image
 ---
 
-<div class="text-3xl text-primary font-bold m-8">
+<div class="text-3xl font-bold m-8">
 Git のマージが 2 種類ありますね
 </div>
 
@@ -1286,17 +1292,17 @@ layout: center-image
 
 ```mermaid
 graph LR
-  c01((0000))
-  c02((d041))
-  c03((dd96))
-  c04((9437))
-  c05((a79b))
-  c06((88a0))
-  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  c01 --> c02 --> c03 --> c04
-  c03 --> c05
-  c04 --> c06
-  c05 --> c06
+  a01((0000))
+  a02((d041))
+  a03((dd96))
+  a04((9437))
+  a05((a79b))
+  a06((88a0))
+  style a01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  a01 --> a02 --> a03 --> a04
+  a03 --> a05
+  a04 --> a06
+  a05 -.-> a06
 ```
 
 <div class="text-3xl text-primary font-bold m-8">
@@ -1305,12 +1311,12 @@ graph LR
 
 ```mermaid
 graph LR
-  c01((0000))
-  c02((d041))
-  c03((dd96))
-  c05((a79b))
-  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  c01 --> c02 --> c03 --> c05
+  b01((0000))
+  b02((d041))
+  b03((dd96))
+  b05((a79b))
+  style b01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  b01 --> b02 --> b03 --> b05
 ```
 
 ---
@@ -1330,12 +1336,11 @@ graph LR
   c05((a79b))
   c06((88a0))
   style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  style c05 fill:#afa,stroke:#dfd,stroke-width:1px
   style c06 fill:#afa,stroke:#dfd,stroke-width:1px
   c01 --> c02 --> c03 --> c04
   c03 --> c05
   c04 --> c06
-  c05 --> c06
+  c05 -.-> c06
 ```
 
 <div class="text-3xl text-primary font-bold m-8">
@@ -1357,7 +1362,7 @@ layout: center-image
 ---
 
 <div class="text-3xl font-bold m-8">
-  マージコミットが無い = マージしたぞという "歴史が無い"
+　マージコミットが無い = マージしたぞという "歴史が無い"
 </div>
 
 <div class="text-2xl font-bold m-8">
@@ -1394,14 +1399,13 @@ layout: center-image
 ---
 
 <div class="text-3xl font-bold m-8">
-  マージコミットは残しておいた方がベターです
+  多くの場合、マージコミットは残しておいた方がベターです
 </div>
 
 <v-click>
 
-<div class="text-2xl m-8">
-  <img style="margin: auto" src="https://pbs.twimg.com/profile_images/1070038810111565824/1omCvDAZ.jpg" />
-  それってあなたの感想ですよね？
+<div class="text-lg m-8">
+  ひ○ゆき氏😏 ... <span class="text-3xl">それってあなたの感想ですよね？</span>
 </div>
 
 </v-click>
@@ -1419,11 +1423,11 @@ layout: center-image
 ---
 
 <div class="text-2xl font-bold m-8">
-  残念ですが、世の中には一定数いるのです。
+  世の中には一定数いるのです。
 </div>
 
 <div class="text-2xl font-bold m-8">
-　正しい歴史 &lt;&lt; 美しいコミットグラフ 派が... 😰
+　正しい歴史 ＜＜＜ 美しいコミットグラフ 派が...
 </div>
 
 ---
@@ -1433,9 +1437,7 @@ layout: center-image
 <div class="text-3xl font-bold m-4">
   コミットグラフの美しさを意識するのは<br>
   OSSにPRを出すときだけで良い!!
-</div>
-<div class="text-2xl font-bold m-4">
-  派です
+  <span class="text-xl font-bold m-4">派です</span>
 </div>
 
 OSSコントリビューションのお作法については後ほど 🙌
@@ -1448,7 +1450,7 @@ layout: center-image
 	git reset
 </div>
 
-こいつは歴史を書き換える危険なコマンドです ☠️
+これは歴史を書き換える危険なコマンドです ☠️
 
 ---
 layout: center-image
@@ -1514,6 +1516,7 @@ graph LR
   c03((dd96))
   c04[staging]
   style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style c03 fill:#afa,stroke:#dfd,stroke-width:1px
   c01 --> c02 --> c03 --> c04
 ```
 
@@ -1599,6 +1602,7 @@ graph LR
   c02((d041))
   c03((dd96))
   style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style c02 fill:#fdf,stroke:#333,stroke-width:1px
   c01 --> c02 --> c03
 ```
 
@@ -1611,6 +1615,7 @@ graph LR
   d02((d041))
   d03((e292))
   style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d02 fill:#fdf,stroke:#333,stroke-width:1px
   style d03 fill:#dfd,stroke:#333,stroke-width:1px
   d01 --> d02 --> d03
 ```
@@ -1622,15 +1627,6 @@ layout: center-image
 <div class="text-2xl font-bold mb-8">
   コミット = 自身のハッシュ + 直前のハッシュ
 </div>
-
-```mermaid
-graph LR
-  d01((d041))
-  d03((e292))
-  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  style d03 fill:#dfd,stroke:#333,stroke-width:1px
-  d01 --> d03
-```
 
 ---
 layout: center-image
@@ -1645,23 +1641,26 @@ layout: center-image
 </div>
 ```mermaid
 graph LR
-  c01((0000))
-  c02((d041))
-  c03((dd96))
-  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  c01 --> c02 --> c03
+  a01((0000))
+  a02((d041))
+  a03((dd96))
+  style a01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style a02 fill:#fdf,stroke:#333,stroke-width:1px
+  a01 --> a02 --> a03
 ```
 
-<div class="text-xl text-primary font-bold">
-  COMMIT
+<div class="text-xl text-primary font-bold mt-8">
+  LOCAL
 </div>
 ```mermaid
 graph LR
-  d01((d041))
-  d03((e292))
-  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
-  style d03 fill:#dfd,stroke:#333,stroke-width:1px
-  d01 --> d03
+  b01((0000))
+  b02((d041))
+  b03((e292))
+  style b01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style b02 fill:#fdf,stroke:#333,stroke-width:1px
+  style b03 fill:#dfd,stroke:#333,stroke-width:1px
+  b01 --> b02 --> b03
 ```
 
 ---
@@ -1669,7 +1668,10 @@ layout: center-image
 ---
 
 <div class="text-2xl font-bold m-4">
-  mainブランチが2つに分離してしまう… = push error
+  2つに分離してしまう…
+</div>
+<div class="text-xl font-bold m-4">
+  これは push error
 </div>
 
 <div class="text-xl text-primary font-bold">
@@ -1683,6 +1685,7 @@ graph LR
   c03((dd96))
   d03((e292))
   style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style c02 fill:#fdf,stroke:#333,stroke-width:1px
   style d03 fill:#dfd,stroke:#333,stroke-width:1px
   c01 --> c02 --> c03
   c02 --> d03
@@ -1702,7 +1705,7 @@ layout: center-image
 
 <v-click>
   <div class="text-2xl font-bold m-4">
-    ↑ 犯罪です
+    ↑ 犯罪です 👮🏻‍♂️
   </div>
 </v-click>
 
@@ -1714,8 +1717,88 @@ layout: center-image
 git reset は明らかに push してないことを事前に確認
 </div>
 
-<div class="text-2xl font-bold mb-4">
-よくわからないなら使わない！
+<div class="text-xl font-bold mb-4">
+よくわからないまま使うと大変なことに…
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	ちょっとコマンド集から脱線して…（後で戻ります）
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	「git push -f した若手を怒るのはやめよう」
+  <br>
+  について
+</div>
+
+※ 適切な指導は必要ですよっ
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-8">
+	「今度来た若いのいきなり main に git push -f してさ〜」😤
+</div>
+<div class="text-2xl font-bold m-8">
+	「いや、管理側にも大いに問題あるよそれ」🤨
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
+	大事な branch は設定で守ろう!!
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold m-8">
+  GitHub Branch Protection
+</div>
+
+[🌐 GitHub のブランチ保護ルール](https://docs.github.com/ja/github/administering-a-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) を活用しましょう。
+
+<br>
+
+- CI が通っていないマージは NG
+- Approve 必須
+- main への直接 push は owner のみ
+- などなど
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-8">
+	若手が安心して git を使えるようにしてあげよう 😎
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold md-4">
+	では、いろいろなコマンドをみていきましょう（再開）
 </div>
 
 ---
@@ -1754,7 +1837,6 @@ graph LR
   d03((e292))
   d04((41d2))
   style d03 fill:#aef,stroke:#333,stroke-width:1px
-  style d04 fill:#aef,stroke:#333,stroke-width:1px
   d01 --> d02 --> d03 --> d04
 ```
 
@@ -1785,20 +1867,46 @@ layout: center-image
 </span>
 取り込みます。
 
-<v-click>
+---
+layout: center-image
+---
 
+<div class="text-xl font-bold m-8">
+e292に対してcherry-pickを実行
+</div>
+
+<div class="text-xl text-primary font-bold">
+  BRANCH-A
+</div>
 ```mermaid
 graph LR
-  d03((e292))
-  d04{{patch}}
-  style d03 fill:#aef,stroke:#333,stroke-width:1px
-  style d04 fill:#aef,stroke:#333,stroke-width:1px
-  d03 -- パッチを作る --> d04
+  a01((a901))
+  a02((d041))
+  a03((dd96))
+  style a03 fill:#dfd,stroke:#333,stroke-width:1px
+  a01 --> a02 --> a03
 ```
 
-</v-click>
+<div class="text-xl text-primary font-bold">
+  BRANCH-B
+</div>
+```mermaid
+graph LR
+  b01((a901))
+  b02((d041))
+  b03((e292))
+  b04((41d2))
+  style b03 fill:#aef,stroke:#333,stroke-width:1px
+  b01 --> b02 --> b03 --> b04
+```
 
-<v-click>
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold m-8">
+e292からパッチを作って...
+</div>
 
 <div class="text-xl text-primary font-bold">
   BRANCH-A
@@ -1808,12 +1916,54 @@ graph LR
   c01((a901))
   c02((d041))
   c03((dd96))
-  c04((ae22))
   style c03 fill:#dfd,stroke:#333,stroke-width:1px
-  style c04 fill:#aef,stroke:#333,stroke-width:1px
-  c01 --> c02 --> c03 -- パッチからコミットを作る --> c04
+  c01 --> c02 --> c03
 ```
-</v-click>
+
+<div class="text-xl text-primary font-bold">
+  BRANCH-B
+</div>
+```mermaid
+graph LR
+  d01((a901))
+  d02((d041))
+  d03((e292))
+  d04((41d2))
+  style d03 fill:#aef,stroke:#333,stroke-width:1px
+  d01 --> d02 --> d03 --> d04
+```
+
+```mermaid
+graph LR
+  e03((e292))
+  e05{{patch}}
+  style e03 fill:#aef,stroke:#333,stroke-width:1px
+  style e05 fill:#aef,stroke:#333,stroke-width:1px
+  e03 -- パッチを作る --> e05
+```
+
+---
+layout: center-image
+---
+
+<div class="text-xl font-bold m-8">
+mainブランチにパッチを適用してコミットを作る
+</div>
+
+<div class="text-xl text-primary font-bold">
+  BRANCH-A
+</div>
+```mermaid
+graph LR
+  f01((a901))
+  f02((d041))
+  f03((dd96))
+  f04((ae22))
+  style f03 fill:#dfd,stroke:#333,stroke-width:1px
+  style f04 fill:#aef,stroke:#333,stroke-width:1px
+  f01 --> f02 --> f03 --PATCH--> f04
+```
+
 
 ---
 layout: center-image
@@ -1949,7 +2099,7 @@ graph LR
 layout: center-image
 ---
 
-同じ変更を別のコミットに変換して、繋げます（ハッシュが異なる）
+同じ変更を<span class="font-bold">別のコミット</span>に変換して、繋げます（ハッシュが異なる）
 
 ```mermaid
 graph LR
@@ -2001,13 +2151,13 @@ graph LR
 ---
 layout: center-image
 ---
-
-<br><br>
+<div class="text-xl">
 平行線の歴史を一直線にすることができます
 
-つまり、**「歴史を書き換えます」**
+つまり、<span class="font-bold">「歴史を書き換えます」</span>
 
 リモートへの影響は常に意識しましょう（何度でも言います）
+</div>
 
 ---
 layout: center-image
@@ -2029,9 +2179,10 @@ OSS への Pull Requestのときです
 main へのマージ前にするケースもあるようです。
 <br>
 これは組織の方針に合わせてください。
-<br>
-なお、私はしません。
 </div>
+
+<br><br>
+私はあまりしません🙄
 
 ---
 layout: center-image
@@ -2045,9 +2196,9 @@ layout: center-image
 <div class="text-xl">
 PRを受け取ったら、そのPRはちょっと昔のコミットから生えていた。
 
-おいおい、マージすんの俺かよ・・・
+😑「おいおい、マージすんの俺かよ・・・」
 
-PR 断ろ www
+🤪「だるいし PR 断ろ www」
 </div>
 
 <br><br>
@@ -2058,12 +2209,12 @@ PR 断ろ www
 ---
 layout: center-image
 ---
-<div class="text-xl font-bold mb-8">
-  綺麗な歴史は大事
+<div class="text-xl mb-8">
+  ありのままの歴史を残すことは大切です
   <br><br>
   でも、OSSの場合は、
 
-  歴史の持ち主は自分ではありません
+  <span class="text-2xl font-bold">歴史の管理者は自分ではありません</span>
 
   いくらコントリビューターと言えども、配慮が必要です。
 </div>
@@ -2083,20 +2234,59 @@ layout: center-image
 ---
 
 <div class="text-2xl font-bold md-4">
-  コミットが細かくバラバラと切られたPRはなかなかレビューが大変です。
+  コミットが細かくバラバラと切られたPRは<br>なかなかレビューが大変です
 </div>
 <br><br>
 <div class="text-xl md-4">
   レビュアーの気持ちになって、 1 Issue - 1 Commit を心がけましょう。<br>
   でも、作業中は細かくコミットしておきたい。<br>
-  そんな時に squash です。
+  そんな時は squash でまとめましょう
 </div>
 
 ---
 layout: center-image
 ---
 
-<div class="text-3xl font-bold">
+<div class="text-2xl font-bold md-4">
+  git merge --squash topic
+</div>
+```mermaid
+graph LR
+  c01((0000))
+  c02((d041))
+  c03((dd96))
+  c04((9437))
+  c05((a79b))
+  c06((88a0))
+  style c01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  c01 --> c02 --> c03 --> c04
+  c03 --> c05
+  c05 --> c06
+```
+これを…
+```mermaid
+graph LR
+  d01((0000))
+  d02((d041))
+  d03((dd96))
+  d04((9437))
+  d05((a79b))
+  d06((88a0))
+  d07((b1d9))
+  style d01 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d05 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d06 fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+  style d07 fill:#aef,stroke:#333,stroke-width:1px
+  d01 --> d02 --> d03 --> d04 --> d07
+  d03 --> d05 --> d06
+```
+こう
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold">
 せっかく OSS へ PR を投げる話になったので、
 
 コントリビューションマナーについて紹介します
@@ -2104,15 +2294,16 @@ layout: center-image
 
 
 ---
-layout: image-left
-image: 'https://i.gyazo.com/0d53da503208419287de5a8f2cd03b13.png'
+layout: center-image
 ---
 
-<div class="text-3xl font-bold">
+<div class="text-3xl font-bold m-8">
 まずこれを読む
 </div>
 
 https://github.com/github/opensource.guide
+
+<br><br>
 
 https://opensource.guide/how-to-contribute/
 
@@ -2146,7 +2337,7 @@ layout: center-image
 
 Hacktoberfest という団体がやったイベントで
 
-"なんでもいいから OSS に PR を 4 つ作ったらTシャツあげます!!"
+"なんでもいいから OSS に PR を4つ作ったらTシャツあげます!!"
 
 が事件を起こしました
 
@@ -2154,8 +2345,8 @@ Hacktoberfest という団体がやったイベントで
 layout: center-image
 ---
 
-<div class="text-7xl font-bold mb-8">
-  クソ PR の大量発生
+<div class="text-6xl font-bold mb-8">
+  残念な PR の大量発生💩
 </div>
 
 ---
@@ -2163,7 +2354,7 @@ layout: center-image
 ---
 
 <div class="text-6xl font-bold mb-8">
-  憤怒するOSSメンテナー
+  憤怒するOSSメンテナー🤬
 </div>
 
 ---
@@ -2193,7 +2384,7 @@ layout: center-image
 <style>
 ul {
   text-align: left;
-  list-style-type: circle;
+  list-style-type: decimal;
   font-size: 1.3rem;
 }
 </style>
@@ -2203,7 +2394,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Pull Requests Should Handle ONE Thing
+  1. Pull Requests Should Handle ONE Thing
 </div>
 
 <div class="text-2xl">
@@ -2224,7 +2415,7 @@ layout: center-image
 
 <br><br>
 <div class="text-3xl">
-  はぁぁぁぁああ!??!?!?!?
+  いやぁぁぁぁぁぁ！！！😱
 </div>
 
 </v-click>
@@ -2236,7 +2427,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Don't Break Consistency
+  2. Don't Break Consistency
 </div>
 
 <div class="text-2xl">
@@ -2253,7 +2444,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Don't Start Work Without Approval
+  3. Don't Start Work Without Approval
 </div>
 
 <div class="text-2xl">
@@ -2268,7 +2459,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Don't Re-Open Known Problems/Solutions
+  4. Don't Re-Open Known Problems/Solutions
 </div>
 
 <div class="text-2xl">
@@ -2281,7 +2472,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Squash Those Commits
+  5. Squash Those Commits
 </div>
 
 <div class="text-2xl">
@@ -2293,7 +2484,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Be Meaningful
+  6. Be Meaningful
 </div>
 
 <div class="text-2xl">
@@ -2309,14 +2500,14 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  いいコントリビューションはいいIssueから
+  いいコントリビューションはいい Issue から
 </div>
 
 
 <div class="text-xl">
-  コントリビューションマナーを見ると、Issueの大切さがよくわかると思います
+  コントリビューションマナーを見ると、Issue の大切さがよくわかると思います
 
-  いいIssueを目指しましょう
+  良い Issue を目指しましょう
 </div>
 
 
@@ -2325,7 +2516,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  Issue を立てる時に気をつけること
+  Issue を立てる時に気をつけることチェックリスト
 </div>
 
 - Issue の重複はなるべくやめて…
@@ -2337,7 +2528,111 @@ layout: center-image
 <style>
 ul {
   text-align: left;
-  list-style-type: circle;
+  list-style-type: decimal;
   font-size: 1.3rem;
 }
 </style>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  1. Issue の重複はなるべくやめて…
+</div>
+
+完璧でなくて良いですが、似た Issue が無いかなるべく検索しましょう。
+
+もし見落としても怒られないので、あくまで親切心で😊
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  2. 感想？観測？どっち？
+</div>
+
+Edge だと XX っていうエラーがでます!!
+
+(... Safari, Chrome, Firefox 確認してない)
+
+これが感想
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  3. テンプレート使ってよ… 🥺
+</div>
+
+Issue のテンプレートが用意されている場合があります。なるべく探しましょう。
+
+<br>
+
+📄 bug_report.md
+```md
+## Steps to Reproduce
+1. Run `flutter create bug`.
+2. Update the files as follows: ...
+3. ...
+
+**Expected results:**
+
+**Actual results:**
+
+Logs...
+```
+
+参考: https://github.com/flutter/flutter/issues/59842
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  4. 情報が少なすぎる
+</div>
+
+<div class="text-xl">
+5W1H を意識して書こうね
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  5. タイトルから中身が分からない
+</div>
+
+<div class="text-xl">
+TITLE:「コンポーネントAでエラーが出る」
+</div>
+
+なんの？
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  最後のトピック
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  git flow について
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  後で書く
+</div>
