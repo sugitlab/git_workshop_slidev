@@ -205,11 +205,14 @@ Git / Subversion / Mercurial
 
 ---
 layout: center-image
-image: 'https://i.gyazo.com/a6663519f17bc80a6af38dbc4e10a96c.jpg'
 ---
 
 <div class="text-4xl text-primary font-bold m-4">
 Google Trends
+</div>
+
+<div class="flex align-center justify-center">
+  <img src="https://i.gyazo.com/bca93c9f18f08f3da2db9058b405ba71.png" class="w-3/5 drop-shadow-lg" />
 </div>
 
 ---
@@ -268,56 +271,45 @@ layout: center-image
 </div>
 
 ---
-layout: image-left
-image: 'https://i.gyazo.com/58bdb692e3d248913103fc25f04fbec7.jpg'
-equal: false
+layout: center-image
 ---
 
-<div class="text-3xl font-bold">
+<div class="text-3xl font-bold m-8">
   Git は分散型だからです
 </div>
 
+<div class="flex align-center justify-center">
+  <img src="https://wac-cdn.atlassian.com/dam/jcr:221c9d09-9b40-4bca-8ca9-812b6098724e/distributed.png?cdnVersion=1727" class="w-1/5 drop-shadow-lg" />
+</div>
+
 ---
-layout: image-right
-image: 'https://i.gyazo.com/1572c8c55c60bb28cad1a238864b1d70.jpg'
-equal: false
+layout: center-image
 ---
 
-<div class="text-3xl font-bold">
+<div class="text-3xl font-bold mb-8">
   Subversion は中央集中型です
 </div>
 
----
-layout: image-left
-image: 'https://i.gyazo.com/8b356b1ffedb364f4bd0fa8dd9280daf.jpg'
----
-
-<div class="text-4xl text-primary font-bold m-4">
-Git
+<div class="flex align-center justify-center">
+  <img src="https://wac-cdn.atlassian.com/dam/jcr:bf87c338-2cce-4835-8ac7-25f689c9519d/centralized.png?cdnVersion=1727" class="w-1/5 drop-shadow-lg" />
 </div>
 
-参加者全員がリポジトリをもちます
-
-```shell
-$ git clone ...
-```
-
-っていうアレです
 
 ---
-layout: image-left
-image: 'https://i.gyazo.com/f9a64a8692ba0996b6441c0a930ba94b.jpg'
+layout: center-image
 ---
-<div class="text-4xl text-primary font-bold m-4">
-Subversion
+
+<div class="grid grid-cols-2 col-span-full">
+  <span class="text-4xl text-primary font-bold">
+  Subversion
+  </span>
+  <span class="text-4xl text-primary font-bold">
+    Git
+  </span>
 </div>
-
-<br>
-
-参加者はリポジトリをもちません
-
-ファイルをもらって、変更して、登録します
-
+<div class="flex align-center justify-center">
+  <img src="https://wac-cdn.atlassian.com/dam/jcr:9d51f0ee-5946-4be2-886c-ff040ef8c1a1/03.svg?cdnVersion=1727" class="drop-shadow-lg" style="width:800px"/>
+</div>
 
 ---
 layout: center-image
@@ -388,7 +380,6 @@ GitHub の登場によってオープンソース活動が世の中に急速に�
 
 ---
 layout: center-image
-image: 'https://i.gyazo.com/a6663519f17bc80a6af38dbc4e10a96c.jpg'
 ---
 
 <div class="text-2xl mb-8">
@@ -396,6 +387,11 @@ GitHubのサービススタートが2010年です
 
 Gitの大逆転が始まっていますね
 </div>
+
+<div class="flex align-center justify-center">
+  <img src="https://i.gyazo.com/bca93c9f18f08f3da2db9058b405ba71.png" class="w-3/5 drop-shadow-lg" />
+</div>
+
 
 ---
 layout: center-image
@@ -492,7 +488,6 @@ layout: center-image
 
 ---
 layout: center-image
-image: 'https://gyazo.com/239107de6b5d59a372531fc380c080d2.png'
 ---
 
 <div class="text-3xl font-bold mb-8">
@@ -501,6 +496,11 @@ Gitリポジトリであるかどうか...
 <div class="text-3xl font-bold mb-8">
 それは .git があるかどうかです!
 </div>
+
+<div class="flex align-center justify-center">
+  <img src="https://gyazo.com/239107de6b5d59a372531fc380c080d2.png" class="w-3/5 drop-shadow-lg" />
+</div>
+
 
 ---
 layout: center-image

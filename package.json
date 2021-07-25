@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build --base /git_workshop_slidev",
+    "build": "slidev build --base /git_workshop_slidev/",
     "export": "slidev export",
     "deploy": "gh-pages -d dist"
   },
