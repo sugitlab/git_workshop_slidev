@@ -27,8 +27,8 @@ equal: false
 <div class="text-5xl font-bold text-primary pb-4">Who is Sugit?!</div>
 
 
-<div class="blend" style="display:flex" >
-  <img style="vertical-align:middle" src="https://pbs.twimg.com/profile_images/1261278455842271232/4TQJWEPG_400x400.jpg" height="80" width="80" />
+<div style="display:flex" >
+  <img style="vertical-align:middle" src="https://i.gyazo.com/fdeb7ba6436bc8c567eb31addee0a38b.png" height="80" width="80" />
   <p> <a href="https://twitter.com/sugitlab">@sugitlab</a>: 自称フルペラットエンジニア </p>
 </div>
 
@@ -44,17 +44,6 @@ equal: false
   - U30なら無料なので興味あればぜひ
 
 <style>
-.blend {
-  display: grid;
-  place-items: center;
-}
-
-.blend img {
-  mix-blend-mode: multiply;
-  max-width: 300px;
-  height: auto;
-}
-
 ul {
   list-style-type: circle;
 }
