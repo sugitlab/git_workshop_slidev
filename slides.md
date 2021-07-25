@@ -2563,7 +2563,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  1. テンプレート使ってよ… 🥺
+  3. テンプレート使ってよ… 🥺
 </div>
 
 Issue のテンプレートが用意されている場合があります。なるべく探しましょう。
