@@ -2306,7 +2306,7 @@ layout: center-image
 </div>
 
 <div class="flex align-center justify-center">
-  <img src="https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg" class="w-1/5 drop-shadow-lg" />
+  <img src="https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg" class="w-3/5 drop-shadow-lg" />
 </div>
 
 https://qvault.io/open-source/contributing-to-open-source/
@@ -2358,7 +2358,7 @@ layout: center-image
 </div>
 
 <div class="flex align-center justify-center">
-  <img src="https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg" class="w-1/5 drop-shadow-lg" />
+  <img src="https://qvault.io/wp-content/uploads/2020/10/6-Things-to-Avoid-When-Contributing-to-Open-Source-Projects-1536x864.jpg" class="w-3/5 drop-shadow-lg" />
 </div>
 
 ---
@@ -2548,18 +2548,22 @@ layout: center-image
   2. 感想？観測？どっち？
 </div>
 
-Edge だと XX っていうエラーがでます!!
+Edge のときに XX っていうエラーがでます!!
 
 (... Safari, Chrome, Firefox 確認してない)
 
 これが感想
+
+正しくは 
+
+「XXっていうエラーが出ます。私の環境は Edge です。」
 
 ---
 layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  3. テンプレート使ってよ… 🥺
+  1. テンプレート使ってよ… 🥺
 </div>
 
 Issue のテンプレートが用意されている場合があります。なるべく探しましょう。
