@@ -2624,7 +2624,7 @@ layout: center-image
 ---
 
 <div class="text-3xl text-primary font-bold mb-4">
-  git flow について
+  Git flow について
 </div>
 
 
@@ -2633,5 +2633,242 @@ layout: center-image
 ---
 
 <div class="text-3xl font-bold mb-4">
-  後で書く
+  Gitっていろんなことができるんだなぁ 😗
 </div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  そう、いろいろできるんです
+</div>
+
+<v-click>
+
+  <div class="text-3xl font-bold mb-4">
+    できちゃうんです… 😇
+  </div>
+
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-4">
+  運用ルールがない<span class="text-red-400">無法地帯Gitプロジェクト</span>は本当に危険です
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  作ろう運用ルール 👨🏻‍🔧
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  有名な運用ルールに習おう
+
+  それが "Git flow"
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Git flow
+</div>
+
+<v-click>
+
+
+<div class="text-xl text-primary font-bold mb-4">
+<br>
+<i class="light-icon-brand-github"></i> GitHub flow
+
+<i class="light-icon-brand-gitlab"></i> GitLab flow
+
+<br>
+という派生もありますよ
+</div>
+
+</v-click>
+
+---
+layout: image-right
+image: 'https://nvie.com/img/git-model@2x.png'
+equal: false
+---
+
+<div class="text-3xl text-primary font-bold mb-4">
+  Git flow
+</div>
+<div class="text-2xl font-bold mb-4">
+  A Successful Git Branching Model
+</div>
+
+https://nvie.com/posts/a-successful-git-branching-model/
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold m-8">
+  拡大!!
+</div>
+<div class="flex align-center justify-center">
+  <img src="https://nvie.com/img/git-model@2x.png" class="w-3xl drop-shadow-lg" />
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-4">
+  Branch
+</div>
+
+- **master (main)** : 製品リリース版のブランチ。リリースに合わせてTagをつける。
+- **develop** : 開発ブランチ。リリース前の最新情報はここにある状態にする。
+- **feature** : 追加機能、バグ修正などの小テーマごとに用意するブランチ。
+- **release** : リリース直前（develop以上、master以下）の微調整作業用ブランチ。
+- **hotfix** : masterブランチで発生した緊急修正用のブランチ。
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  え、、ややこし… 😦
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-4">
+  私もそう思います
+  <br><br>
+  一方で、とてもよくできた運用でもあります
+</div>
+<div class="text-xl font-bold mb-4">
+  <br>
+  「知って使わない」と「知らない」は大違いなのでぜひ覚えておいてください
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  そこで、私の推奨はこちら
+</div>
+<div class="text-3xl text-primary font-bold mb-4">
+  人が頑張るのはもうやめよう
+</div>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  細かすぎるルールはだいたい上手くいかない
+</div>
+
+私が業務で扱っているリポジトリは100人近くのメンバーが参加しています。
+
+優秀な人材が集まろうが、<span class="text-red-500 text-xl">ルールの徹底など不可能</span>です 😭
+
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-4">
+  Git flow が提唱されたのが 2010年です
+</div>
+
+<div class="text-2xl font-bold mb-4">
+  GitHubのリリースとおよそ同時期ですね
+</div>
+
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-4">
+  10年あればソフトウェア業界は別世界になります
+</div>
+
+- 10年前 : よく考えられたルールに準じて運用しよう
+- 現代 : 全てのルールは人ではなく、システムで担保する
+
+<style>
+ul {
+  text-align: left;
+  list-style-type: circle;
+  font-size: 1.3rem;
+}
+</style>
+
+---
+layout: center-image
+---
+
+<div class="text-2xl font-bold mb-4">
+  ルールはシステムで担保する時代
+</div>
+
+<v-click>
+
+<div class="text-4xl text-primary font-bold mb-4">
+  CI/CD の時代!!
+</div>
+
+</v-click>
+
+---
+layout: center-image
+---
+
+<div class="text-3xl font-bold mb-4">
+  CI/CD はありとあらゆる組織（個人開発含め）で
+
+  なるべく早い段階で導入することを
+
+  強くお勧めします（経験に基づく）
+</div>
+
+保険と同じ。何かあってからでは遅いのです。
+
+---
+layout: intro
+image: "https://source.unsplash.com/collection/94734566/1920x1080"
+---
+
+<div class="mb-4 absolute bottom-16 left-12">
+  <div class="text-9xl text-white text-opacity-80" style="font-weight:600;" >
+    Git  <light-icon icon="git-branch"/>
+  </div> 
+  <span class="text-6xl text-primary-lighter text-opacity-80" style="font-weight:500;" >
+    と仲良くなれましたか?
+  </span>
+</div>
+
