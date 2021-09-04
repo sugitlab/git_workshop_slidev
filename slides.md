@@ -6,8 +6,7 @@ layout: intro
 info: |
   ## Get along with Git
 
-  Presented by [@sugitlab](https://twitter.com/sugitlab). <br>
-  Arranged by [@yuki82511988](https://twitter.com/yuki82511988).
+  Presented by [@sugitlab](https://twitter.com/sugitlab).
 ---
 
 <div class="mb-4 absolute bottom-4 left-12">
@@ -18,89 +17,6 @@ info: |
     Git  <light-icon icon="git-branch"/>
   </div> 
 </div>
-
----
-layout: image-right
-equal: false
----
-
-<div class="text-5xl font-bold text-primary pb-4">Who is Sugit?!</div>
-
-
-<div style="display:flex" >
-  <img style="vertical-align:middle" src="https://i.gyazo.com/fdeb7ba6436bc8c567eb31addee0a38b.png" height="80" width="80" />
-  <p> <a href="https://twitter.com/sugitlab">@sugitlab</a>: 自称フルペラットエンジニア </p>
-</div>
-
-<br>
-<br>
-
-- 🍵 **Kyoto** - 京都にある会社で研究寄りのエンジニアやってます
-  - 化学 + 数学 + プログラミング がお仕事です
-  - 最近は PdM なお仕事が多め (´・ω・｀)
-- 🧑‍💻 **Flutter** - プライベートの時間は大体 Flutter やってます
-- 🗞 **[Zenn](https://zenn.dev/sugitlab)** - Flutter のことばかり書いている Zenn アカウントです
-- 🚃 **[TechTrain](https://techbowl.co.jp/techtrain/mentors/116)** - 副業で U30 向けのメンターやってます。
-  - U30なら無料なので興味あればぜひ
-
-<style>
-ul {
-  list-style-type: circle;
-}
-</style>
-
----
-layout: image-right
----
-
-<div class="text-5xl font-bold text-primary pb-4">Thanks <light-icon icon="color-picker" /> </div>
-
-<div class="text-xl">
-  事前アンケートへのご協力ありがとうございました
-</div>
-
----
-layout: center-image
----
-
-<div class="text-5xl font-bold text-primary pb-4">Questionnaire Results</div>
-
-- "git-flow という運用パターンとその Pros, Cons" : 11
-- "git のちょっと踏み込んだ使い方" : 10
-- "git でやらかさないためにすること" : 10
-- "そもそも VCS (Version Control System) のことについて知っていますか？" : 10
-- "git が管理している .git フォルダの中身を見たことがありますか？" : 10
-- "git におけるマージは 2 種類ある" : 9
-- "GitHub の Issue でやってほしくないこと" : 9
-- "OSS コントリビューションマナー" : 7
-
-<style>
-ul {
-  text-align: left;
-  list-style-type: circle;
-  font-size: 1.3rem;
-}
-</style>
-
----
-layout: center-image
----
-
-- "git やらかしと対処法" : 6
-- "VSC と VCS Hosting Service のことについて知っていますか？" : 6
-- "Git Client (GUI, TUI, CLI tool) のおすすめたち" : 5
-- "ローカルとリモートをちゃんと理解する" : 5
-- "GitHub における Markdown 文化とお作法" : 5
-- "git の四方山話 (歴史など)" : 2
-- "git の基本的な使い方" : 1
-
-<style>
-ul {
-  text-align: left;
-  list-style-type: circle;
-  font-size: 1.3rem;
-}
-</style>
 
 ---
 layout: center-image
