@@ -3,13 +3,14 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build --base /git_workshop_slidev/",
-    "export": "slidev export",
+    "export": "slidev export --with-clicks",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@slidev/cli": "^0.22.4",
     "@slidev/theme-bricks": "^0.0.2",
     "@slidev/theme-default": "^0.19.1",
+    "playwright-chromium": "^1.14.1",
     "slidev-theme-light-icons": "^1.0.2",
     "slidev-theme-penguin": "^1.0.0",
     "slidev-theme-purplin": "^1.0.0"
